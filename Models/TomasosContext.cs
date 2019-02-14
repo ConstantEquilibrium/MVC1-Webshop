@@ -24,7 +24,6 @@ namespace Inlämning_2___Webshop.Models
         public virtual DbSet<AspNetUsers> AspNetUsers { get; set; }
         public virtual DbSet<Bestallning> Bestallning { get; set; }
         public virtual DbSet<BestallningMatratt> BestallningMatratt { get; set; }
-        public virtual DbSet<Kund> Kund { get; set; }
         public virtual DbSet<Matratt> Matratt { get; set; }
         public virtual DbSet<MatrattProdukt> MatrattProdukt { get; set; }
         public virtual DbSet<MatrattTyp> MatrattTyp { get; set; }
@@ -35,16 +34,19 @@ namespace Inlämning_2___Webshop.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=localhost; Database=Tomasos;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer("Data Source=213.114.157.16,1433; Database=Tomasos; User Id=robert; Password=EQMmrICF8IJCM150;");
             }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.HasAnnotation("ProductVersion", "2.2.2-servicing-10034");
+            modelBuilder.HasAnnotation("ProductVersion", "2.2.2-servicing-10034")
+                .HasAnnotation("Relational:DefaultSchema", "db_owner");
 
             modelBuilder.Entity<AspNetRoleClaims>(entity =>
             {
+                entity.ToTable("AspNetRoleClaims", "dbo");
+
                 entity.HasIndex(e => e.RoleId);
 
                 entity.Property(e => e.RoleId).IsRequired();
@@ -56,6 +58,8 @@ namespace Inlämning_2___Webshop.Models
 
             modelBuilder.Entity<AspNetRoles>(entity =>
             {
+                entity.ToTable("AspNetRoles", "dbo");
+
                 entity.HasIndex(e => e.NormalizedName)
                     .HasName("RoleNameIndex")
                     .IsUnique()
@@ -70,6 +74,8 @@ namespace Inlämning_2___Webshop.Models
 
             modelBuilder.Entity<AspNetUserClaims>(entity =>
             {
+                entity.ToTable("AspNetUserClaims", "dbo");
+
                 entity.HasIndex(e => e.UserId);
 
                 entity.Property(e => e.UserId).IsRequired();
@@ -83,6 +89,8 @@ namespace Inlämning_2___Webshop.Models
             {
                 entity.HasKey(e => new { e.LoginProvider, e.ProviderKey });
 
+                entity.ToTable("AspNetUserLogins", "dbo");
+
                 entity.HasIndex(e => e.UserId);
 
                 entity.Property(e => e.UserId).IsRequired();
@@ -95,6 +103,8 @@ namespace Inlämning_2___Webshop.Models
             modelBuilder.Entity<AspNetUserRoles>(entity =>
             {
                 entity.HasKey(e => new { e.UserId, e.RoleId });
+
+                entity.ToTable("AspNetUserRoles", "dbo");
 
                 entity.HasIndex(e => e.RoleId);
 
@@ -111,6 +121,8 @@ namespace Inlämning_2___Webshop.Models
             {
                 entity.HasKey(e => new { e.UserId, e.LoginProvider, e.Name });
 
+                entity.ToTable("AspNetUserTokens", "dbo");
+
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.AspNetUserTokens)
                     .HasForeignKey(d => d.UserId);
@@ -118,6 +130,8 @@ namespace Inlämning_2___Webshop.Models
 
             modelBuilder.Entity<AspNetUsers>(entity =>
             {
+                entity.ToTable("AspNetUsers", "dbo");
+
                 entity.HasIndex(e => e.NormalizedEmail)
                     .HasName("EmailIndex");
 
@@ -139,6 +153,8 @@ namespace Inlämning_2___Webshop.Models
 
             modelBuilder.Entity<Bestallning>(entity =>
             {
+                entity.ToTable("Bestallning", "dbo");
+
                 entity.Property(e => e.BestallningId).HasColumnName("BestallningID");
 
                 entity.Property(e => e.BestallningDatum).HasColumnType("datetime");
@@ -159,6 +175,8 @@ namespace Inlämning_2___Webshop.Models
             {
                 entity.HasKey(e => new { e.MatrattId, e.BestallningId });
 
+                entity.ToTable("BestallningMatratt", "dbo");
+
                 entity.Property(e => e.MatrattId).HasColumnName("MatrattID");
 
                 entity.Property(e => e.BestallningId).HasColumnName("BestallningID");
@@ -178,53 +196,10 @@ namespace Inlämning_2___Webshop.Models
                     .HasConstraintName("FK_BestallningMatratt_Matratt");
             });
 
-            modelBuilder.Entity<Kund>(entity =>
-            {
-                entity.Property(e => e.KundId)
-                    .HasColumnName("KundID")
-                    .ValueGeneratedNever();
-
-                entity.Property(e => e.AnvandarNamn)
-                    .IsRequired()
-                    .HasMaxLength(20)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.Email)
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.Gatuadress)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.Losenord)
-                    .IsRequired()
-                    .HasMaxLength(20)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.Namn)
-                    .IsRequired()
-                    .HasMaxLength(100)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.Postnr)
-                    .IsRequired()
-                    .HasMaxLength(20)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.Postort)
-                    .IsRequired()
-                    .HasMaxLength(100)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.Telefon)
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
-            });
-
             modelBuilder.Entity<Matratt>(entity =>
             {
+                entity.ToTable("Matratt", "dbo");
+
                 entity.Property(e => e.MatrattId).HasColumnName("MatrattID");
 
                 entity.Property(e => e.Beskrivning)
@@ -247,6 +222,8 @@ namespace Inlämning_2___Webshop.Models
             {
                 entity.HasKey(e => new { e.MatrattId, e.ProduktId });
 
+                entity.ToTable("MatrattProdukt", "dbo");
+
                 entity.Property(e => e.MatrattId).HasColumnName("MatrattID");
 
                 entity.Property(e => e.ProduktId).HasColumnName("ProduktID");
@@ -268,6 +245,8 @@ namespace Inlämning_2___Webshop.Models
             {
                 entity.HasKey(e => e.MatrattTyp1);
 
+                entity.ToTable("MatrattTyp", "dbo");
+
                 entity.Property(e => e.MatrattTyp1).HasColumnName("MatrattTyp");
 
                 entity.Property(e => e.Beskrivning)
@@ -278,6 +257,8 @@ namespace Inlämning_2___Webshop.Models
 
             modelBuilder.Entity<Produkt>(entity =>
             {
+                entity.ToTable("Produkt", "dbo");
+
                 entity.Property(e => e.ProduktId).HasColumnName("ProduktID");
 
                 entity.Property(e => e.ProduktNamn)

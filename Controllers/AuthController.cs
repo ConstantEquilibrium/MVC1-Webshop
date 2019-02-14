@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Inlämning_2___Webshop.IdentityData;
 using Microsoft.AspNetCore.Identity;
 using Inlämning_2___Webshop.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Inlämning_2___Webshop.Controllers
 {
@@ -13,13 +14,16 @@ namespace Inlämning_2___Webshop.Controllers
     {
         private UserManager<ApplicationUser> _userManager;
         private SignInManager<ApplicationUser> _signInManager;
+        private RoleManager<IdentityRole> _roleManager;
 
-        public AuthController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
+        public AuthController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _roleManager = roleManager;
         }
 
+        [AllowAnonymous]
         public IActionResult Register()
         {
             return View();
@@ -67,6 +71,42 @@ namespace Inlämning_2___Webshop.Controllers
             }
 
             return View();
+        }
+
+        [AllowAnonymous]
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Login(RegisterUser user)
+        {
+            var result = await _signInManager.PasswordSignInAsync(user.Username, user.Password, true, false);
+
+            if (result.Succeeded)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+            return View();
+        }
+
+        [Authorize]
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Index", "Home");
+        }
+
+        private async Task createRole(string roleName)
+        {
+            //bool x = await _roleManager.RoleExistsAsync(roleName);
+            var role = new IdentityRole();
+            role.Name = roleName;
+            await _roleManager.CreateAsync(role);
         }
     }
 }

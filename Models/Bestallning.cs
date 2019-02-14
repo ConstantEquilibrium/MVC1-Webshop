@@ -16,7 +16,7 @@ namespace Inlämning_2___Webshop.Models
         public bool Levererad { get; set; }
         public string KundId { get; set; }
 
-        public virtual Kund Kund { get; set; }
+        public virtual AspNetUsers Kund { get; set; }
         public virtual ICollection<BestallningMatratt> BestallningMatratt { get; set; }
     }
 }

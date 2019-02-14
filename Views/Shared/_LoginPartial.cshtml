@@ -1,0 +1,28 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Inlämning_2___Webshop.IdentityData;
+
+@inject SignInManager<ApplicationUser> signInManager
+@inject UserManager<ApplicationUser> userManager
+
+
+@if (signInManager.IsSignedIn(User))
+{
+    <ul class="navbar-nav flex-grow-1">
+        <li class="nav-link"><a asp-controller="User" asp-action="Profile">@User.Identity.Name</a></li>
+        <li class="nav-link"><a asp-controller="User" asp-action="Settings">Settings</a></li>
+        <li class="nav-link"><a asp-controller="Auth" asp-action="Logout">Logga ut</a> </li>
+        @if (User.IsInRole("Administrator"))
+        {
+            <li><a asp-controller="Admin" asp-action="Index">Admin</a> </li>
+        }
+
+    </ul>
+}
+else
+{
+    <ul class="navbar-nav flex-grow-1">
+        <li class="nav-link"><a class="btn btn-light" asp-controller="Auth" asp-action="Login">Logga in</a> </li>
+        <li class="nav-link"><a class="btn btn-primary" asp-controller="Auth" asp-action="Register">Skapa användare</a> </li>
+    </ul>
+
+}
