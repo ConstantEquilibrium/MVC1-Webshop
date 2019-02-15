@@ -67,6 +67,21 @@ namespace Inlämning_2___Webshop
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
+                    name: "Register",
+                    template: "register",
+                    defaults: new { controller = "Auth", action = "Register" });
+
+                routes.MapRoute(
+                    name: "UserRoute",
+                    template: "{action}",
+                    defaults: new { controller = "User" });
+
+                routes.MapRoute(
+                    name: "AdminPanel",
+                    template: "Admin",
+                    defaults: new { controller = "Admin", action = "AdminPanel" });
+
+                routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });

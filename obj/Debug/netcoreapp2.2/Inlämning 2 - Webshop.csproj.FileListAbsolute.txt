@@ -35,3 +35,4 @@ C:\Users\Robert\Documents\Nackademin\ASP.NET MVC 1\Inlämningar\Inlämning 2 - W
 C:\Users\Robert\Documents\Nackademin\ASP.NET MVC 1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\User\Orders.g.cshtml.cs
 C:\Users\Robert\Documents\Nackademin\ASP.NET MVC 1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\User\Profile.g.cshtml.cs
 C:\Users\Robert\Documents\Nackademin\ASP.NET MVC 1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\User\Settings.g.cshtml.cs
+C:\Users\Robert\Documents\Nackademin\ASP.NET MVC 1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\Admin\AdminPanel.g.cshtml.cs

@@ -15,7 +15,7 @@ namespace Inlämning_2___Webshop.Controllers
 
         public IActionResult Settings()
         {
-            return View();
+            return View();  
         }
 
         public IActionResult Orders()

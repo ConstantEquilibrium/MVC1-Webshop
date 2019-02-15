@@ -54,3 +54,33 @@ body {
   height: 60px;
   line-height: 60px; /* Vertically center the text there */
 }
+
+.input-required {
+    color:red;
+    margin-right:0.2em;
+}
+
+.field-validation-error {
+    color:red;
+}
+
+.input-validation-error {
+    /*border-color:red!important;*/
+    box-shadow: 0 0 0 0.1rem rgba(255, 0, 0, 0.7)!important;
+}
+
+.dropdown-menu > li {
+    border-bottom: 1px solid rgb(222, 226, 230);
+}
+
+    .dropdown-menu > li:hover {
+        background: rgb(242, 242, 242);
+    }
+
+    .dropdown-menu > li > a:hover {
+        text-decoration: none;
+    }
+
+    .dropdown-menu > .divider, .dropdown-menu > li:last-child {
+        border-bottom: none;
+    }

@@ -8,7 +8,7 @@ namespace Inlämning_2___Webshop.Controllers
 {
     public class AdminController : Controller
     {
-        public IActionResult Index()
+        public IActionResult AdminPanel()
         {
             return View();
         }

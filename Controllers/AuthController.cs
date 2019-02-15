@@ -32,38 +32,18 @@ namespace Inlämning_2___Webshop.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(RegisterUser user)
-        {
-            //var emailConfirmed = false;
-            //var phoneConfirmed = false;
-            //var passwordConfirmed = false;
-
-            var emailConfirmed = true;
-            var phoneConfirmed = true;
-            var passwordConfirmed = true;
-
-            if (user.Email == user.EmailConfirmed)
-            {
-                emailConfirmed = true;
-            }
-
-            if (user.PhoneNumber == user.PhoneNumberConfirmed)
-            {
-                phoneConfirmed = true;
-            }
-
-            if (user.Password == user.PasswordConfirmed)
-            {
-                passwordConfirmed = true;
-            }
-
+        {            
             var userIdentity = new ApplicationUser
-            {
+            {   
                 UserName = user.Username,
                 Email = user.Email,
                 PhoneNumber = user.PhoneNumber,
             };
 
+            await createRole();
+
             var result = await _userManager.CreateAsync(userIdentity, user.Password);
+            var resultRole = await _userManager.AddToRoleAsync(userIdentity, "standard");
 
             if(result.Succeeded)
             {
@@ -101,12 +81,14 @@ namespace Inlämning_2___Webshop.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        private async Task createRole(string roleName)
+        private async Task createRole()
         {
-            //bool x = await _roleManager.RoleExistsAsync(roleName);
-            var role = new IdentityRole();
-            role.Name = roleName;
-            await _roleManager.CreateAsync(role);
+            bool x = await _roleManager.RoleExistsAsync("admin");
+            if (x == false)
+            {
+                var role = new IdentityRole { Name = "admin" };
+                await _roleManager.CreateAsync(role);
+            }
         }
     }
 }
