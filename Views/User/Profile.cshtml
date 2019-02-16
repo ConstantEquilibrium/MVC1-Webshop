@@ -1,7 +1,11 @@
-﻿
+﻿@using Microsoft.AspNetCore.Identity;
+@using Inlämning_2___Webshop.IdentityData;
+
+@inject SignInManager<ApplicationUser> signInManager
+@inject UserManager<ApplicationUser> userManager;
+
 @{
-    ViewData["Title"] = "Profile";
+    ViewData["Title"] = "View Profile";
 }
 
-<h1>Profile</h1>
-
+<h1>@Model.Email</h1>

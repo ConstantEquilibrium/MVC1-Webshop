@@ -1,0 +1,18 @@
+﻿@model List<Inlämning_2___Webshop.Models.Matratt>
+
+<h3>Du har beställt: </h3>
+
+<table>
+    @foreach (var product in Model)
+    {
+        <tr>
+            <td>@product.MatrattNamn</td>
+            <td>@product.Pris SEK</td>
+        </tr>
+    }
+
+    <tr>
+        <td>Totalsumma: </td>
+        <td>@Model.Sum(p => p.Pris) SEK</td>
+    </tr>
+</table>

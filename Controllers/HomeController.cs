@@ -5,6 +5,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Inlämning_2___Webshop.Models;
+using Inlämning_2___Webshop.ViewModels;
+using Inlämning_2___Webshop.IdentityData;
 
 namespace Inlämning_2___Webshop.Controllers
 {

@@ -12947,8 +12947,10 @@
     ".NETCoreApp,Version=v2.2": [
       "Microsoft.AspNetCore.App >= 2.2.0",
       "Microsoft.AspNetCore.Razor.Design >= 2.2.0",
+      "Microsoft.AspNetCore.Session >= 2.2.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 2.2.2",
       "Microsoft.EntityFrameworkCore.Tools >= 2.2.2",
+      "Microsoft.Extensions.Caching.Memory >= 2.2.0",
       "Microsoft.NETCore.App >= 2.2.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.2.2"
     ]
@@ -12960,11 +12962,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Robert\\Documents\\Nackademin\\ASP.NET MVC 1\\Inlämningar\\Inlämning 2 - Webshop\\Inlämning 2 - Webshop.csproj",
+      "projectUniqueName": "H:\\Robert\\Nackademin\\ASPNET MVC1\\Inlämningar\\Inlämning 2 - Webshop\\Inlämning 2 - Webshop.csproj",
       "projectName": "Inlämning 2 - Webshop",
-      "projectPath": "C:\\Users\\Robert\\Documents\\Nackademin\\ASP.NET MVC 1\\Inlämningar\\Inlämning 2 - Webshop\\Inlämning 2 - Webshop.csproj",
+      "projectPath": "H:\\Robert\\Nackademin\\ASPNET MVC1\\Inlämningar\\Inlämning 2 - Webshop\\Inlämning 2 - Webshop.csproj",
       "packagesPath": "C:\\Users\\Robert\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Robert\\Documents\\Nackademin\\ASP.NET MVC 1\\Inlämningar\\Inlämning 2 - Webshop\\obj\\",
+      "outputPath": "H:\\Robert\\Nackademin\\ASPNET MVC1\\Inlämningar\\Inlämning 2 - Webshop\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -13005,6 +13007,10 @@
             "target": "Package",
             "version": "[2.2.0, )"
           },
+          "Microsoft.AspNetCore.Session": {
+            "target": "Package",
+            "version": "[2.2.0, )"
+          },
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
             "version": "[2.2.2, )"
@@ -13014,6 +13020,10 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[2.2.2, )"
+          },
+          "Microsoft.Extensions.Caching.Memory": {
+            "target": "Package",
+            "version": "[2.2.0, )"
           },
           "Microsoft.NETCore.App": {
             "suppressParent": "All",
