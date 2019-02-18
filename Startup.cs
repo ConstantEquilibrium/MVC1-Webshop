@@ -13,6 +13,7 @@ using Inlämning_2___Webshop.Models;
 using Microsoft.EntityFrameworkCore;
 using Inlämning_2___Webshop.IdentityData;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Routing;
 
 namespace Inlämning_2___Webshop
 {
@@ -43,6 +44,8 @@ namespace Inlämning_2___Webshop
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDBContext>()
                 .AddDefaultTokenProviders();
+
+            services.Configure<RouteOptions>(options => options.AppendTrailingSlash = true);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -67,9 +70,9 @@ namespace Inlämning_2___Webshop
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
-                    name: "Register",
-                    template: "register",
-                    defaults: new { controller = "Auth", action = "Register" });
+                    name: "AuthRoute",
+                    template: "{action}",
+                    defaults: new { controller = "Auth" });
 
                 routes.MapRoute(
                     name: "UserRoute",

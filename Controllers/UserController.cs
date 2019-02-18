@@ -8,6 +8,7 @@ namespace Inlämning_2___Webshop.Controllers
 {
     public class UserController : Controller
     {
+        [Route("Profile/")]
         public IActionResult Profile()
         {
             return View();
@@ -18,6 +19,7 @@ namespace Inlämning_2___Webshop.Controllers
             return View();  
         }
 
+        [Route("Orders/")]
         public IActionResult Orders()
         {
             return View();
