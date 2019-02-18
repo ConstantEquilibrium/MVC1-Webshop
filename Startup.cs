@@ -1,19 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Inlämning_2___Webshop.IdentityData;
+using Inlämning_2___Webshop.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+<<<<<<< HEAD
 using Inlämning_2___Webshop.Models;
 using Microsoft.EntityFrameworkCore;
 using Inlämning_2___Webshop.IdentityData;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Routing;
+=======
+>>>>>>> 9047cc0ec00a16e90bb6282886930f1b23c91a8a
 
 namespace Inlämning_2___Webshop
 {
@@ -39,10 +41,16 @@ namespace Inlämning_2___Webshop
             var conn = Configuration.GetConnectionString("conn");
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            services.AddDistributedMemoryCache();
+            services.AddSession();
+
             services.AddDbContext<ApplicationDBContext>(options => options.UseSqlServer(conn));
+            services.AddDbContext<TomasosContext>(options => options.UseSqlServer(conn));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDBContext>()
+                .AddEntityFrameworkStores<TomasosContext>()
                 .AddDefaultTokenProviders();
 
             services.Configure<RouteOptions>(options => options.AppendTrailingSlash = true);
@@ -62,10 +70,11 @@ namespace Inlämning_2___Webshop
                 app.UseHsts();
             }
 
-            app.UseAuthentication();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+            app.UseAuthentication();
+            app.UseSession();
 
             app.UseMvc(routes =>
             {

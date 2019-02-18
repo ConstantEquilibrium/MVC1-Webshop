@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Inlämning_2___Webshop.IdentityData
 {
-    public class ApplicationUser : IdentityUser 
+    public class ApplicationUser : IdentityUser
     {
     }
 }

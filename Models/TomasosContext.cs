@@ -31,11 +31,7 @@ namespace Inlämning_2___Webshop.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            if (!optionsBuilder.IsConfigured)
-            {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Data Source=213.114.157.16,1433; Database=Tomasos; User Id=robert; Password=EQMmrICF8IJCM150;");
-            }
+
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

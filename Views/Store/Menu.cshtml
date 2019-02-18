@@ -1,0 +1,28 @@
+﻿@using Microsoft.AspNetCore.Http;
+@{
+    ViewData["Title"] = "Menu";
+}
+
+<h1>Menu</h1>
+
+<link href="~/css/StyleSheet.css" type="text/css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.ajax.unobtrusive/3.2.4/jquery.unobtrusive-ajax.min.js"></script>
+
+<div id="productlist">
+    <table>
+        @foreach (var recipe in Model.Recipes)
+        {
+            <tr>
+                <td>@recipe.MatrattNamn</td>
+                <td>@recipe.Pris SEK</td>
+                <td><a asp-controller="Store" asp-action="AddProductToCart" asp-route-id="@recipe.MatrattId" data-ajax="true" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-update="#cart">Add to cart</a></td>
+            </tr>
+        }
+    </table>
+
+    <partial name="_Cart" />
+
+</div>
+
+<div id="cart">

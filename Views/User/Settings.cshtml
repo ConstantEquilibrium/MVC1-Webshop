@@ -1,7 +1,41 @@
-﻿
+﻿@using Microsoft.AspNetCore.Identity;
+@using Inlämning_2___Webshop.IdentityData;
+
+@inject SignInManager<ApplicationUser> signInManager
+@inject UserManager<ApplicationUser> userManager;
+
 @{
     ViewData["Title"] = "Settings";
 }
 
-<h1>Profile</h1>
+<h1>Settings</h1>
 
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.17.0/jquery.validate.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"></script>
+
+@*<form asp-action="Register" asp-controller="Auth" method="post">
+    <div class="form-group">
+        <label asp-for="UserName"><span class="input-required">*</span>Username:</label>
+        <input asp-for="UserName" placeholder="@User.Identity.Name" class="form-control" />
+        <span asp-validation-for="UserName"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Email"><span class="input-required">*</span>Email:</label>
+        <input asp-for="Email" placeholder="@Model.UserName" class="form-control" />
+        <span asp-validation-for="Email"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="PhoneNumber">Phone Number:</label>
+        <input asp-for="PhoneNumber" placeholder="Phone Number" class="form-control" />
+    </div>
+
+    <input type="submit" class="btn btn-primary" value="Sign up" />
+</form>*@
+
+<form method="post">
+    <label 
+    <input placeholder="@Model.Email" type="email" />
+</form>

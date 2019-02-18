@@ -5,3 +5,10 @@
 
 <h1>Admin</h1>
 
+<h3>Change user role:</h3>
+<select>
+    @foreach (var user in Model)
+    {
+        <option value="user.UserName">@user.UserName</option>
+    }
+</select>

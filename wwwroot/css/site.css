@@ -69,18 +69,19 @@ body {
     box-shadow: 0 0 0 0.1rem rgba(255, 0, 0, 0.7)!important;
 }
 
-.dropdown-menu > li {
+.dropdown-menu > a > li {
     border-bottom: 1px solid rgb(222, 226, 230);
+    color: #1d2124 !important;
 }
 
-    .dropdown-menu > li:hover {
+    .dropdown-menu > a > li:hover {
         background: rgb(242, 242, 242);
     }
 
-    .dropdown-menu > li > a:hover {
+    .dropdown-menu > a:hover {
         text-decoration: none;
     }
 
-    .dropdown-menu > .divider, .dropdown-menu > li:last-child {
+    .dropdown-menu > .divider, .dropdown-menu > a > li:last-child {
         border-bottom: none;
     }

@@ -36,3 +36,43 @@ C:\Users\Robert\Documents\Nackademin\ASP.NET MVC 1\Inlämningar\Inlämning 2 - W
 C:\Users\Robert\Documents\Nackademin\ASP.NET MVC 1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\User\Profile.g.cshtml.cs
 C:\Users\Robert\Documents\Nackademin\ASP.NET MVC 1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\User\Settings.g.cshtml.cs
 C:\Users\Robert\Documents\Nackademin\ASP.NET MVC 1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\Admin\AdminPanel.g.cshtml.cs
+H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\bin\Debug\netcoreapp2.2\Inlämning 2 - Webshop.deps.json
+H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\bin\Debug\netcoreapp2.2\Inlämning 2 - Webshop.runtimeconfig.json
+H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\bin\Debug\netcoreapp2.2\Inlämning 2 - Webshop.runtimeconfig.dev.json
+H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\bin\Debug\netcoreapp2.2\Inlämning 2 - Webshop.dll
+H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\bin\Debug\netcoreapp2.2\Inlämning 2 - Webshop.pdb
+H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\bin\Debug\netcoreapp2.2\Inlämning 2 - Webshop.Views.dll
+H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\bin\Debug\netcoreapp2.2\Inlämning 2 - Webshop.Views.pdb
+H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Inlämning 2 - Webshop.csprojAssemblyReference.cache
+H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Inlämning 2 - Webshop.csproj.CoreCompileInputs.cache
+H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Inlämning 2 - Webshop.RazorAssemblyInfo.cache
+H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Inlämning 2 - Webshop.RazorAssemblyInfo.cs
+H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Inlämning 2 - Webshop.AssemblyInfoInputs.cache
+H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Inlämning 2 - Webshop.AssemblyInfo.cs
+H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Inlämning 2 - Webshop.TagHelpers.input.cache
+H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Inlämning 2 - Webshop.TagHelpers.output.cache
+H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Inlämning 2 - Webshop.RazorCoreGenerate.cache
+H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\Admin\AdminPanel.g.cshtml.cs
+H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\Auth\Login.g.cshtml.cs
+H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\Auth\Register.g.cshtml.cs
+H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\Home\About.g.cshtml.cs
+H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.g.cshtml.cs
+H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\Home\Privacy.g.cshtml.cs
+H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Error.g.cshtml.cs
+H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
+H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Layout.g.cshtml.cs
+H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_LoginPartial.g.cshtml.cs
+H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
+H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\User\Orders.g.cshtml.cs
+H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\User\Profile.g.cshtml.cs
+H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\User\Settings.g.cshtml.cs
+H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\_ViewImports.g.cshtml.cs
+H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\_ViewStart.g.cshtml.cs
+H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Inlämning 2 - Webshop.RazorTargetAssemblyInfo.cache
+H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Inlämning 2 - Webshop.RazorTargetAssemblyInfo.cs
+H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Inlämning 2 - Webshop.Views.pdb
+H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Inlämning 2 - Webshop.dll
+H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Inlämning 2 - Webshop.pdb
+H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Inlämning 2 - Webshop.csproj.CopyComplete
+H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\Store\Menu.g.cshtml.cs
+H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Cart.g.cshtml.cs
