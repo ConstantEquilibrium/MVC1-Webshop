@@ -76,3 +76,5 @@ H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\n
 H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Inlämning 2 - Webshop.csproj.CopyComplete
 H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\Store\Menu.g.cshtml.cs
 H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Cart.g.cshtml.cs
+C:\Users\Robert\Documents\Nackademin\ASP.NET MVC 1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Cart.g.cshtml.cs
+C:\Users\Robert\Documents\Nackademin\ASP.NET MVC 1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\Store\Menu.g.cshtml.cs

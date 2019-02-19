@@ -11,15 +11,9 @@ namespace Inlämning_2___Webshop.Controllers
 {
     public class UserController : Controller
     {
-<<<<<<< HEAD
-        [Route("Profile/")]
-        public IActionResult Profile()
-=======
         private UserManager<ApplicationUser> _userManager;
-
-
+               
         public UserController(UserManager<ApplicationUser> userManager)
->>>>>>> 9047cc0ec00a16e90bb6282886930f1b23c91a8a
         {
             _userManager = userManager;
         }
@@ -29,6 +23,7 @@ namespace Inlämning_2___Webshop.Controllers
             return await _userManager.GetUserAsync(HttpContext.User);
         }
 
+        [Route("Profile/")]
         public async Task<IActionResult> Profile()
         {
             //_userManager.GetEmailAsync(User.Identity.)

@@ -1,4 +1,4 @@
-﻿@using Microsoft.AspNetCore.Http;
+﻿@model List<Inlämning_2___Webshop.Models.Matratt>
 @{
     ViewData["Title"] = "Menu";
 }
@@ -11,7 +11,7 @@
 
 <div id="productlist">
     <table>
-        @foreach (var recipe in Model.Recipes)
+        @foreach (var recipe in Model)
         {
             <tr>
                 <td>@recipe.MatrattNamn</td>
@@ -21,7 +21,7 @@
         }
     </table>
 
-    <partial name="_Cart" />
+    @*<partial name="_Cart" />*@
 
 </div>
 

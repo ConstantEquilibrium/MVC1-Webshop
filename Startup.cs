@@ -5,17 +5,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-<<<<<<< HEAD
-using Inlämning_2___Webshop.Models;
-using Microsoft.EntityFrameworkCore;
-using Inlämning_2___Webshop.IdentityData;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Routing;
-=======
->>>>>>> 9047cc0ec00a16e90bb6282886930f1b23c91a8a
 
 namespace Inlämning_2___Webshop
 {
