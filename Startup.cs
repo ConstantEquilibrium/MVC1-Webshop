@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -44,6 +45,8 @@ namespace Inlämning_2___Webshop
                 .AddEntityFrameworkStores<ApplicationDBContext>()
                 .AddEntityFrameworkStores<TomasosContext>()
                 .AddDefaultTokenProviders();
+
+            services.Configure<RouteOptions>(options => options.AppendTrailingSlash = true);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

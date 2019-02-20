@@ -12,8 +12,7 @@ namespace Inlämning_2___Webshop.Controllers
     public class UserController : Controller
     {
         private UserManager<ApplicationUser> _userManager;
-
-
+               
         public UserController(UserManager<ApplicationUser> userManager)
         {
             _userManager = userManager;
@@ -24,6 +23,7 @@ namespace Inlämning_2___Webshop.Controllers
             return await _userManager.GetUserAsync(HttpContext.User);
         }
 
+        [Route("Profile/")]
         public async Task<IActionResult> Profile()
         {
             //_userManager.GetEmailAsync(User.Identity.)
@@ -37,6 +37,7 @@ namespace Inlämning_2___Webshop.Controllers
             return View(user);  
         }
 
+        [Route("Orders/")]
         public IActionResult Orders()
         {
             return View();

@@ -23,11 +23,14 @@ namespace Inlämning_2___Webshop.Controllers
 
         public IActionResult Menu()
         {
-            CheckCart();
-            var model = new MenuIngredientViewModel();
-            model.Recipes = _tomasosContext.Matratt.ToList();
-            model.Ingredients = _tomasosContext.Produkt.ToList();
-            model.RecipeIngredients = _tomasosContext.MatrattProdukt.ToList();
+
+            //CheckCart();
+            var model = _tomasosContext.Matratt.ToList();
+            //var model = new MenuIngredientViewModel();
+            //model.Recipes = _tomasosContext.Matratt.ToList();
+            //model.Ingredients = _tomasosContext.Produkt.ToList();
+            //model.RecipeIngredients = _tomasosContext.MatrattProdukt.ToList();
+
             return View(model);
         }
 
@@ -64,6 +67,13 @@ namespace Inlämning_2___Webshop.Controllers
             cart.Add(newProduct);
             
             HttpContext.Session.SetString(sessionName, JsonConvert.SerializeObject(cart));
+
+            return PartialView("_Cart", cart);
+        }
+
+        public IActionResult RemoveFromCart(Matratt matratt)
+        {
+            List<Matratt> cart = new List<Matratt>(); ;
 
             return PartialView("_Cart", cart);
         }
