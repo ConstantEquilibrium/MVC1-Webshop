@@ -239,11 +239,11 @@ namespace Inlämning_2___Webshop.Models
 
             modelBuilder.Entity<MatrattTyp>(entity =>
             {
-                entity.HasKey(e => e.MatrattTyp1);
+                entity.HasKey(e => e.MatrattTypId);
 
                 entity.ToTable("MatrattTyp", "dbo");
 
-                entity.Property(e => e.MatrattTyp1).HasColumnName("MatrattTyp");
+                entity.Property(e => e.MatrattTypId ).HasColumnName("MatrattTyp");
 
                 entity.Property(e => e.Beskrivning)
                     .IsRequired()

@@ -10,7 +10,7 @@ namespace Inlämning_2___Webshop.Models
             Matratt = new HashSet<Matratt>();
         }
 
-        public int MatrattTyp1 { get; set; }
+        public int MatrattTypId { get; set; }
         public string Beskrivning { get; set; }
 
         public virtual ICollection<Matratt> Matratt { get; set; }

@@ -3,12 +3,12 @@
 <h3>Du har beställt: </h3>
 
 <table>
-    @foreach (var product in Model)
+    @foreach (var matratt in Model)
     {
         <tr>
-            <td>@product.MatrattNamn</td>
-            <td>@product.Pris SEK</td>
-            <td><a asp-action="RemoveFromCart" asp-route-matratt="@product">Remove</a></td>
+            <td>@matratt.MatrattNamn</td>
+            <td>@matratt.Pris SEK</td>
+            <td><a asp-controller="Store" asp-action="RemoveFromCart" asp-route-id="@matratt.MatrattId" data-ajax="true" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-update="#cart">Remove</a></td>
         </tr>
     }
 

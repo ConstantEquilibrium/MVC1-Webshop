@@ -1,0 +1,23 @@
+﻿@model Inlämning_2___Webshop.ViewModels.UpdateUserViewModel
+
+    <form method="post" asp-action="UpdateUserData">
+        <input asp-for="@Model.UserData.Id" type="hidden" value="@Model.UserData.Id" />
+
+        <label asp-for="@Model.UserData.UserName">Username</label>
+        <input asp-for="@Model.UserData.UserName" value="@Model.UserData.UserName " />
+
+        <label asp-for="@Model.UserData.Email">Email</label>
+        <input asp-for="@Model.UserData.Email" value="@Model.UserData.Email" />
+
+        <label asp-for="@Model.UserData.PhoneNumber">Phone number</label>
+        <input asp-for="@Model.UserData.PhoneNumber" value="@Model.UserData.PhoneNumber" />
+
+        <select multiple="" asp-for="@Model.UserRole">
+            @foreach (var role in Model.Roles)
+            {
+                <option value="@role.Name">@role.Name</option>
+            }
+        </select>
+
+        <input type="submit" value="Submit" />
+    </form>

@@ -23,8 +23,7 @@ namespace Inlämning_2___Webshop.Controllers
 
         public IActionResult Menu()
         {
-
-            //CheckCart();
+            CheckCart();
             var model = _tomasosContext.Matratt.ToList();
             //var model = new MenuIngredientViewModel();
             //model.Recipes = _tomasosContext.Matratt.ToList();
@@ -39,15 +38,16 @@ namespace Inlämning_2___Webshop.Controllers
         public IActionResult CheckCart()
         {
             List<Matratt> cart;
-
             if (!string.IsNullOrEmpty(HttpContext.Session.GetString(sessionName)))
             {
                 var temp = HttpContext.Session.GetString(sessionName);
                 cart = JsonConvert.DeserializeObject<List<Matratt>>(temp);
                 return PartialView("_Cart", cart);
             }
-
-            return View();
+            else
+            {
+                return null;
+            }
         }
 
         public IActionResult AddProductToCart(int id)
@@ -71,11 +71,19 @@ namespace Inlämning_2___Webshop.Controllers
             return PartialView("_Cart", cart);
         }
 
-        public IActionResult RemoveFromCart(Matratt matratt)
+        public IActionResult RemoveFromCart(int id)
         {
-            List<Matratt> cart = new List<Matratt>(); ;
+            var session = HttpContext.Session.GetString(sessionName);
+            
+            var temp = HttpContext.Session.GetString(sessionName);
+            List<Matratt> cart = JsonConvert.DeserializeObject<List<Matratt>>(temp);
 
+            cart.Remove(cart.First(p => p.MatrattId == id));
+
+            HttpContext.Session.SetString(sessionName, JsonConvert.SerializeObject(cart));
             return PartialView("_Cart", cart);
         }
+
+
     }
 }

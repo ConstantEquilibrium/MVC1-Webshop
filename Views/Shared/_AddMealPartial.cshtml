@@ -1,0 +1,22 @@
+﻿@model Inlämning_2___Webshop.ViewModels.AddMealViewModel;
+
+<form method="post" asp-action="AddMeal" asp-controller="Admin">
+    <label asp-for="Recipes.MatrattNamn">Namn</label>
+    <input asp-for="Recipes.MatrattNamn" placeholder="Namn" />
+
+    <label asp-for="Recipes.Beskrivning">Beskrivning</label>
+    <input asp-for="Recipes.Beskrivning" placeholder="Beskrivning" />
+
+    <label asp-for="Recipes.Pris">Pris</label>
+    <input asp-for="Recipes.Pris" type="number" placeholder="0" />
+
+    <label asp-for="Recipes.MatrattTyp">Kategori</label>
+    <select asp-for="Recipes.MatrattTyp">
+        @foreach (var category in Model.Category)
+        {
+            <option value="@category.MatrattTypId">@category.Beskrivning</option>
+        }
+    </select>
+
+    <input type="submit" value="Submit" class="btn btn-primary" />
+</form>
