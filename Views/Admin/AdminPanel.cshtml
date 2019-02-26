@@ -10,10 +10,12 @@
 
 <h1>Admin</h1>
 
-<a class="btn btn-primary" asp-controller="Admin" asp-action="AddMeal" data-ajax="true" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-update="#Panel">Add meal</a>
+@*<a class="btn btn-primary" asp-controller="Admin" asp-action="AddMeal" data-ajax="true" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-update="#Panel">Add meal</a>*@
 
 <a class="btn btn-primary" asp-action="ChangeRole" data-ajax="true" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-update="#Panel">Change role</a>
 
-<a class="btn btn-primary" asp-controller="Admin" asp-action="ShowMenu" data-ajax="true" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-update="#Panel">Modify Menu</a>
+@*<a class="btn btn-primary" asp-controller="Admin" asp-action="ShowMenu" data-ajax="true" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-update="#Panel">Modify Menu</a>*@
+
+<a class="btn btn-primary" asp-controller="Admin" asp-action="AlterMenu">Modify Menu</a>
 
 <div id="Panel"></div>

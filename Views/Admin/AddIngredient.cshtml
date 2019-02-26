@@ -1,0 +1,10 @@
+﻿@model Inlämning_2___Webshop.ViewModels.AddIngredientViewModel
+
+<form method="post" asp-controller="Admin" asp-action="AddIngredient">
+    <label asp-for="NewIngredient.ProduktNamn">Namn</label>
+    <input asp-for="NewIngredient.ProduktNamn" placeholder="Namn.." />
+
+    <input type="submit" value="Save" />
+</form>
+
+<partial name="_AddIngredientPartial" />

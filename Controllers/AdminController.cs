@@ -34,12 +34,17 @@ namespace Inlämning_2___Webshop.Controllers
         }
 
         /*************** MENU FUNCTIONS ***************/
-        public IActionResult ShowMenu()
+        public IActionResult AlterMenu()
+        {
+            return View();
+        }
+
+        public IActionResult GetMenu()
         {
             var MealList = GetMealData();
             return PartialView("_ShowMenuPartial", MealList);
         }
-        
+
         /*************** ADD MEAL ***************/
         public IActionResult AddMeal()
         {
@@ -86,7 +91,7 @@ namespace Inlämning_2___Webshop.Controllers
                 {
                     foreach (var ingredient in MatrattProdukt)
                     {
-                        _tomasosContext.Remove(ingredient);
+                        _tomasosContext.MatrattProdukt.Remove(ingredient);
                     }
 
                     _tomasosContext.Remove(meal);
@@ -95,7 +100,7 @@ namespace Inlämning_2___Webshop.Controllers
             }
 
             // Block removing until order conflict resolved
-            return RedirectToAction("AdminPanel");
+            return RedirectToAction("AlterMenu", "Admin");
         }
 
         /*************** UPDATE MEAL ***************/
@@ -162,10 +167,51 @@ namespace Inlämning_2___Webshop.Controllers
                 _tomasosContext.SaveChanges();
             }
 
-            return RedirectToAction("Admin");
+            return RedirectToAction("AlterMenu", "Admin");
+        }
+
+        /*************** INGREDIENT HANDLERS ***************/
+        
+        public IActionResult GetIngredients()
+        {
+            AddIngredientViewModel model = new AddIngredientViewModel();
+            model.ExistingIngredients = _tomasosContext.Produkt.ToList();
+
+            return PartialView("_AddIngredientPartial", model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult AddIngredient(AddIngredientViewModel form)
+        {
+            if (ModelState.IsValid)
+            {
+                _tomasosContext.Produkt.Add(form.NewIngredient);
+                _tomasosContext.SaveChanges();
+            }
+
+            AddIngredientViewModel model = new AddIngredientViewModel();
+            model.ExistingIngredients = _tomasosContext.Produkt.ToList();
+            return RedirectToAction("AlterMenu", "Admin");
+        }
+
+        public IActionResult RemoveIngredient(int id)
+        {
+            var produkt = _tomasosContext.Produkt.SingleOrDefault(x => x.ProduktId == id);
+            if (produkt != null)
+            {
+                _tomasosContext.Produkt.Remove(produkt);
+                _tomasosContext.SaveChanges();
+            }
+
+            AddIngredientViewModel model = new AddIngredientViewModel();
+            model.ExistingIngredients = _tomasosContext.Produkt.ToList();
+            return PartialView("_IngredientListPartial", model);
         }
 
         // TODO: Uppdatera ordrar
+
+        /*************** ROLE HANDLERS ***************/
 
         public IActionResult ChangeRole(int userId)
         {

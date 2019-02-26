@@ -1,0 +1,11 @@
+﻿<div id="IngredientList">
+    <ul>
+        @foreach (var ingredient in Model.ExistingIngredients)
+        {
+            <li>
+                @ingredient.ProduktNamn 
+                <a class="btn btn-danger" asp-action="RemoveIngredient" asp-route-id="@ingredient.ProduktId" data-ajax="true" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-update="#IngredientList">Remove</a>
+            </li>
+        }
+    </ul>
+</div>
