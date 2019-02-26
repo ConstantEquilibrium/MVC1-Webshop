@@ -8,17 +8,20 @@ namespace Inlämning_2___Webshop.ViewModels
 {
     public class AddMealViewModel
     {
-        public Matratt Recipes { get; set; }
+        // Results
+        public Matratt Recipe { get; set; }
+        public int[] SelectedIngredientIds { get; set; }
+
+        // Content fillers
+        public List<Matratt> Meals { get; set; }
         public List<Produkt> Ingredients { get; set; }
-        public List<MatrattTyp> Category { get; set; }
-        public List<CheckboxModel> Checkbox { get; set; }
+        public List<MatrattTyp> Categories { get; set; }
 
         public AddMealViewModel()
         {
-            Recipes = new Matratt();
+            Recipe = new Matratt();
             Ingredients = new List<Produkt>();
-            Category = new List<MatrattTyp>();
-            Checkbox = new List<CheckboxModel>();
+            //Category = new List<MatrattTyp>();
         }
     }
 }

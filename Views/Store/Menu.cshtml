@@ -23,3 +23,28 @@
 </div>
 
 <div id="cart">
+
+
+
+</div>
+
+
+@*@foreach (var item in Model)
+{
+    <div class="MealContainer" style="margin-bottom:2em">
+        <table>
+            <tr>
+                <td>@item.Matratt.MatrattNamn</td>
+                <td>@item.Matratt.Beskrivning</td>
+                <td>@item.Category.Beskrivning</td>
+                <td>@item.Matratt.Pris</td>
+                @foreach (var ingredient in item.Ingredients)
+                {
+                <tr>
+                    <td>@ingredient.ProduktNamn</td>
+                </tr>
+            }
+                </tr>
+            </table>
+        </div>
+    }*@

@@ -15,8 +15,6 @@
                 <a asp-controller="User" asp-action="Orders"><li class="nav-link">Orders</li></a>
                 <a asp-controller="User" asp-action="Settings"><li class="nav-link">Settings</li></a>
                 <a asp-controller="User" asp-action="Profile"><li class="nav-link">Profile</li></a>
-                @*<li class="nav-link"><a asp-controller="User" asp-action="Settings">Settings</a></li>
-        <li class="nav-link"><a asp-controller="User" asp-action="Profile">Profile</a></li>*@
                 @if (User.IsInRole("admin"))
                 {
                     <li role="separator" class="divider"></li>
@@ -26,10 +24,6 @@
                 <a asp-controller="Auth" asp-action="Logout"><li class="nav-link">Logout</li></a>
             </ul>
         </li>
-
-        @*<li class="nav-link"><a asp-controller="User" asp-action="Profile">@User.Identity.Name</a></li>
-            <li class="nav-link"><a asp-controller="User" asp-action="Settings">Settings</a></li>
-            <li class="nav-link"><a asp-controller="Auth" asp-action="Logout">Logga ut</a> </li>*@
         
 
     </ul>

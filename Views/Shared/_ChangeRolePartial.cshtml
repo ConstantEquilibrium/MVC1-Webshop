@@ -13,10 +13,10 @@
 <table>
     @foreach (var user in Model.Users)
     {
-        <tr>
-            <td>@user.UserName</td>
-            <td><a asp-action="GetUserData" asp-route-id="@user.Id" data-ajax="true" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-update="#ProfilePanel">Get user information</a></td>
-        </tr>
+    <tr>
+        <td>@user.UserName</td>
+        <td><a asp-action="GetUserData" asp-route-id="@user.Id" data-ajax="true" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-update="#ProfilePanel">Get user information</a></td>
+    </tr>
     }
 </table>
 

@@ -87,8 +87,12 @@ namespace Inlämning_2___Webshop
                     defaults: new { controller = "Admin", action = "AdminPanel" });
 
                 routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                name: "default",
+                template: "{controller=Admin}/{action=AdminPanel}");
+
+                //routes.MapRoute(
+                //    name: "default",
+                //    template: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
