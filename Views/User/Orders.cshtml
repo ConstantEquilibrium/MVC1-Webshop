@@ -1,8 +1,40 @@
-﻿
+﻿@model Inlämning_2___Webshop.ViewModels.OrdersMatrattViewModel
+
 @{
     ViewData["Title"] = "Orders";
 }
 
 <h1>Orders</h1>
 
-@Html.ActionLink("test", "Settings");
+<table>
+    @foreach (var order in Model.Orders)
+    {
+        <tr>
+            <td>Order date: @order.BestallningDatum</td>
+            <td>@order.Totalbelopp</td>
+            <td>Delivery status: 
+            @if (order.Levererad.Equals(false))
+            {
+                <span>On the way</span>
+            } else
+            {
+                <span>Delivery completed</span>
+            }
+            </td>
+            <td>@Model.MealOrders[1][0].Antal</td>
+        </tr>
+
+
+        @*@foreach (var meals in Model.MealOrders)
+        {
+            <tr>
+            @foreach (var item in meals)
+            {
+                <td>@item.Matratt.MatrattNamn</td>
+                <td>@item.Matratt.Pris</td>
+                <td>@item.Antal</td>
+            }
+            </tr>
+        }*@
+    }
+</table>

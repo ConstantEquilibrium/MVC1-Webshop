@@ -100,12 +100,19 @@ namespace Inlämning_2___Webshop.Controllers
             }
             else
             {
-                var amount = 0;
-
                 var temp = HttpContext.Session.GetString(sessionName);
                 cart = JsonConvert.DeserializeObject<List<Matratt>>(temp);
 
-                var order = new Bestallning
+                var cartDistinct = cart.Select(x => x.MatrattId).Distinct().ToList(); // Plockar ut distinkta MatrattID ur cart
+                List<Matratt> cartDistinctMatratt = new List<Matratt>(); // Konverterar distincta IDn till typen Matratt
+
+                foreach (var item in cartDistinct) // Lägger till matratt i lista av distinkta maträtter
+                {
+                    var query = (from c in cart where c.MatrattId == item select c).First();
+                    cartDistinctMatratt.Add(query);
+                }
+
+                var order = new Bestallning // Skapar en grundbeställning
                 {
                     KundId = currentUser.Id,
                     BestallningDatum = DateTime.Now,
@@ -115,42 +122,22 @@ namespace Inlämning_2___Webshop.Controllers
 
                 _tomasosContext.Bestallning.Add(order);
 
-                foreach (var item in cart.Distinct())
+                var bestallningMatratt = new BestallningMatratt();
+
+                foreach (var item in cartDistinctMatratt)
                 {
-                    var bestallningMatratt = new BestallningMatratt
+                    bestallningMatratt = new BestallningMatratt
                     {
-                        //BestallningId = order.BestallningId,
-                        Bestallning = order,
+                        BestallningId = order.BestallningId,
                         Antal = cart.Where(x => x.MatrattId == item.MatrattId).Count(),
-                        //MatrattId = item.MatrattId
-                        Matratt = item
+                        MatrattId = item.MatrattId
                     };
 
                     _tomasosContext.BestallningMatratt.Add(bestallningMatratt);
-                    bestallningMatratt = null;
                 }
 
                 _tomasosContext.SaveChanges();
                 _tomasosContext.Dispose();
-
-                //var order = new BestallningMatratt
-                //{
-
-                //    Antal = 1,
-                //    MatrattId = cart[0].MatrattId
-                //};
-
-
-                //foreach (var item in cart)
-                //{
-                //    var order = new Bestallning
-                //    {
-                //        BestallningDatum = DateTime.Now,
-                //        Totalbelopp = cart.Sum(x => x.Pris),
-                //        KundId = currentUser.Id,
-                //        Levererad = false
-                //    };
-                //}
             }
 
             return View();
