@@ -7,12 +7,12 @@
 <h1>Orders</h1>
 
 <table>
-    @foreach (var order in Model.Orders)
+    @foreach (var order in Model.OrderData)
     {
         <tr>
             <td>Order date: @order.BestallningDatum</td>
             <td>@order.Totalbelopp</td>
-            <td>Delivery status: 
+            <td>Delivery status:
             @if (order.Levererad.Equals(false))
             {
                 <span>On the way</span>
@@ -21,20 +21,7 @@
                 <span>Delivery completed</span>
             }
             </td>
-            <td>@Model.MealOrders[1][0].Antal</td>
+            <td><a asp-action="RemoveOrder" asp-controller="User" asp-route-orderid="@order.BestallningId" class="btn btn-danger btn-sm">Remove Order</a></td>
         </tr>
-
-
-        @*@foreach (var meals in Model.MealOrders)
-        {
-            <tr>
-            @foreach (var item in meals)
-            {
-                <td>@item.Matratt.MatrattNamn</td>
-                <td>@item.Matratt.Pris</td>
-                <td>@item.Antal</td>
-            }
-            </tr>
-        }*@
     }
 </table>

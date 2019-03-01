@@ -83,10 +83,10 @@ namespace Inlämning_2___Webshop.Controllers
 
         private async Task createRole()
         {
-            bool x = await _roleManager.RoleExistsAsync("admin");
+            bool x = await _roleManager.RoleExistsAsync("premium");
             if (x == false)
             {
-                var role = new IdentityRole { Name = "admin" };
+                var role = new IdentityRole { Name = "premium" };
                 await _roleManager.CreateAsync(role);
             }
         }

@@ -1,6 +1,7 @@
 ﻿@model List<Inlämning_2___Webshop.Models.Matratt>
 
 <h3>Du har beställt: </h3>
+<h4>@User.IsInRole("premium")</h4>
 
 <table>
     @foreach (var matratt in Model)
@@ -12,10 +13,24 @@
         </tr>
     }
 
-    <tr>
-        <td>Totalsumma: </td>
-        <td>@Model.Sum(p => p.Pris) SEK</td>
-    </tr>
+<tr>
+    <td>Totalsumma: </td>
+    @if (User.IsInRole("premium"))
+    {
+        @if (Model.Count >= 3)
+        {
+            <td><s>@Convert.ToInt32(Model.Sum(p => p.Pris))</s> <span style="font-weight:bold; color:forestgreen">@Convert.ToInt32(Model.Sum(p => p.Pris) * .8) SEK</span></td>
+        }
+        else
+        {
+            <td>@Convert.ToInt32(Model.Sum(p => p.Pris)) SEK</td>
+        }
+    }
+    else
+    {
+        <td>@Convert.ToInt32(Model.Sum(p => p.Pris)) SEK</td>
+    }
+</tr>
 </table>
 
 <a class="btn btn-success" asp-controller="Store" asp-action="ConfirmOrder">Complete order</a>

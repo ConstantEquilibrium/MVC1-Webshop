@@ -120,6 +120,14 @@ namespace Inlämning_2___Webshop.Controllers
                     Levererad = false
                 };
 
+                if(User.IsInRole("premium"))
+                {
+                    if (cart.Count >= 3)
+                    {
+                        order.Totalbelopp = Convert.ToInt32(order.Totalbelopp * .8);
+                    }
+                }
+
                 _tomasosContext.Bestallning.Add(order);
 
                 var bestallningMatratt = new BestallningMatratt();
@@ -140,7 +148,8 @@ namespace Inlämning_2___Webshop.Controllers
                 _tomasosContext.Dispose();
             }
 
-            return View();
+            return RedirectToAction("Orders", "User");
         }
+
     }
 }

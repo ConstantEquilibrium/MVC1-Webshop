@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Inlämning_2___Webshop.IdentityData;
 using Inlämning_2___Webshop.Models;
 using Inlämning_2___Webshop.ViewModels;
+using Inlämning_2___Webshop.ViewModels.Admin;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -43,6 +44,23 @@ namespace Inlämning_2___Webshop.Controllers
         {
             var MealList = GetMealData();
             return PartialView("_ShowMenuPartial", MealList);
+        }
+
+        public List<MealData> GetMealData()
+        {
+            List<MealData> MealList = new List<MealData>();
+
+            foreach (var meal in _tomasosContext.Matratt.ToList())
+            {
+                MealList.Add(new MealData
+                {
+                    Matratt = meal,
+                    Category = _tomasosContext.MatrattTyp.SingleOrDefault(x => x.MatrattTypId == meal.MatrattTyp),
+                    Ingredients = (from p in _tomasosContext.Produkt join mp in _tomasosContext.MatrattProdukt on p.ProduktId equals mp.ProduktId where mp.MatrattId == meal.MatrattId select p).ToList()
+                });
+            }
+
+            return MealList;
         }
 
         /*************** ADD MEAL ***************/
@@ -273,38 +291,81 @@ namespace Inlämning_2___Webshop.Controllers
 
         }
 
-        public IActionResult ModifyMenu()
-        {
-            MealMealTypeViewModel model = new MealMealTypeViewModel();
-            var matratt = _tomasosContext.Matratt.ToList();
-            var produkt = _tomasosContext.Produkt.ToList();
-            var matrattprodukt = _tomasosContext.MatrattProdukt.ToList();
+        //public IActionResult ModifyMenu()
+        //{
+        //    MealMealTypeViewModel model = new MealMealTypeViewModel();
+        //    var matratt = _tomasosContext.Matratt.ToList();
+        //    var produkt = _tomasosContext.Produkt.ToList();
+        //    var matrattprodukt = _tomasosContext.MatrattProdukt.ToList();
 
-            foreach (var meal in matratt)
+        //    foreach (var meal in matratt)
+        //    {
+        //        List<Produkt> ingredients = (from mp in matrattprodukt join p in produkt on mp.ProduktId equals p.ProduktId where mp.MatrattId == meal.MatrattId select p).ToList();
+        //        model.Matratt = meal;
+        //        model.Ingredients = ingredients;
+        //    }
+
+        //    return View();
+        //}
+
+        /*************** ORDER FUNCTIONS ***************/
+
+        public IActionResult Orders()
+        {
+            List<AdminOrderViewModel> model = new List<AdminOrderViewModel>();
+            foreach (var user in _dbContext.Users)
             {
-                List<Produkt> ingredients = (from mp in matrattprodukt join p in produkt on mp.ProduktId equals p.ProduktId where mp.MatrattId == meal.MatrattId select p).ToList();
-                model.Matratt = meal;
-                model.Ingredients = ingredients;
+                model.Add(new AdminOrderViewModel { User = user, Orders = _tomasosContext.Bestallning.Where(x => x.KundId == user.Id).OrderByDescending(x => x.BestallningDatum).ToList() });
             }
 
-            return View();
+            return View(model);
         }
 
-        public List<MealData> GetMealData()
+        public IActionResult ChangeOrderStatus(int orderid)
         {
-            List<MealData> MealList = new List<MealData>();
+            var order = _tomasosContext.Bestallning.SingleOrDefault(x => x.BestallningId == orderid);
 
-            foreach (var meal in _tomasosContext.Matratt.ToList())
+            if (order.Levererad == true)
             {
-                MealList.Add(new MealData
-                {
-                    Matratt = meal,
-                    Category = _tomasosContext.MatrattTyp.SingleOrDefault(x => x.MatrattTypId == meal.MatrattTyp),
-                    Ingredients = (from p in _tomasosContext.Produkt join mp in _tomasosContext.MatrattProdukt on p.ProduktId equals mp.ProduktId where mp.MatrattId == meal.MatrattId select p).ToList()
-                });
+                order.Levererad = false;
+            } else
+            {
+                order.Levererad = true;
             }
 
-            return MealList;
+            _tomasosContext.SaveChanges();
+
+            List<AdminOrderViewModel> model = new List<AdminOrderViewModel>();
+            foreach (var user in _dbContext.Users)
+            {
+                model.Add(new AdminOrderViewModel { User = user, Orders = _tomasosContext.Bestallning.Where(x => x.KundId == user.Id).OrderByDescending(x => x.BestallningDatum).ToList() });
+            }
+
+            return PartialView("_ShowOrdersPartial", model);
+        }
+        public IActionResult RemoveOrder(int orderid)
+        {
+            var order = _tomasosContext.Bestallning.SingleOrDefault(x => x.BestallningId == orderid);
+            var mealorder = _tomasosContext.BestallningMatratt.Where(x => x.BestallningId == orderid).ToList();
+            if (order != null)
+            {
+                _tomasosContext.Bestallning.Remove(order);
+
+                foreach (var item in mealorder)
+                {
+                    _tomasosContext.BestallningMatratt.Remove(item);
+                }
+
+                _tomasosContext.SaveChanges();
+            }
+
+            List<AdminOrderViewModel> model = new List<AdminOrderViewModel>();
+            foreach (var user in _dbContext.Users)
+            {
+                model.Add(new AdminOrderViewModel { User = user, Orders = _tomasosContext.Bestallning.Where(x => x.KundId == user.Id).OrderByDescending(x => x.BestallningDatum).ToList() });
+            }
+
+            return PartialView("_ShowOrdersPartial", model);
         }
     }
 }

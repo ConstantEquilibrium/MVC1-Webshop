@@ -46,16 +46,32 @@ namespace Inlämning_2___Webshop.Controllers
         {
             OrdersMatrattViewModel model = new OrdersMatrattViewModel();
             model.UserData = await GetCurrentUser();
-            model.Orders = _tomasosContext.Bestallning.Where(x => x.Kund.Id == model.UserData.Id).ToList();
-            model.MealOrders = new List<List<BestallningMatratt>>();
-
-            foreach (var order in model.Orders)
-            {
-                var mealOrder = _tomasosContext.BestallningMatratt.Where(x => x.BestallningId == order.BestallningId).ToList();
-                model.MealOrders.Add(mealOrder);
-            }
+            model.OrderData = _tomasosContext.Bestallning.Where(x => x.KundId == model.UserData.Id).ToList();
 
             return View(model);
+        }
+
+        public IActionResult GetOrderData(int id)
+        {
+            return View();
+        }
+        public IActionResult RemoveOrder(int orderid)
+        {
+            var order = _tomasosContext.Bestallning.SingleOrDefault(x => x.BestallningId == orderid);
+            var mealorder = _tomasosContext.BestallningMatratt.Where(x => x.BestallningId == orderid).ToList();
+            if (order != null)
+            {
+                _tomasosContext.Bestallning.Remove(order);
+
+                foreach (var item in mealorder)
+                {
+                    _tomasosContext.BestallningMatratt.Remove(item);
+                }
+
+                _tomasosContext.SaveChanges();
+            }
+
+            return RedirectToAction("Orders", "User");
         }
     }
 }

@@ -89,3 +89,5 @@ H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\n
 H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_AddIngredientPartial.g.cshtml.cs
 H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\Admin\AddIngredient.g.cshtml.cs
 H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_IngredientListPartial.g.cshtml.cs
+H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\Admin\Orders.g.cshtml.cs
+H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_ShowOrdersPartial.g.cshtml.cs

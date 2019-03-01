@@ -9,8 +9,25 @@ namespace Inlämning_2___Webshop.ViewModels
 {
     public class OrdersMatrattViewModel
     {
-        public List<Bestallning> Orders { get; set; }
-        public List<List<BestallningMatratt>> MealOrders { get; set; }
         public ApplicationUser UserData { get; set; }
+        public List<Bestallning> OrderData { get; set; }
+        //public List<OrderMatrattModel> OrderData { get; set; }
+    }
+
+    public class OrderMatrattModel
+    {
+        public Bestallning Order { get; set; }
+        public List<OrderMatrattNamnModel> MealOrders { get; set; }
+
+        public OrderMatrattModel()
+        {
+            MealOrders = new List<OrderMatrattNamnModel>();
+        }
+    }
+
+    public class OrderMatrattNamnModel
+    {
+        public string MealName { get; set; }
+        public BestallningMatratt MealOrder { get; set; }
     }
 }
