@@ -34,7 +34,6 @@ C:\Users\Robert\Documents\Nackademin\ASP.NET MVC 1\Inlämningar\Inlämning 2 - W
 C:\Users\Robert\Documents\Nackademin\ASP.NET MVC 1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\Auth\Login.g.cshtml.cs
 C:\Users\Robert\Documents\Nackademin\ASP.NET MVC 1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\User\Orders.g.cshtml.cs
 C:\Users\Robert\Documents\Nackademin\ASP.NET MVC 1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\User\Profile.g.cshtml.cs
-C:\Users\Robert\Documents\Nackademin\ASP.NET MVC 1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\User\Settings.g.cshtml.cs
 C:\Users\Robert\Documents\Nackademin\ASP.NET MVC 1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\Admin\AdminPanel.g.cshtml.cs
 H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\bin\Debug\netcoreapp2.2\Inlämning 2 - Webshop.deps.json
 H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\bin\Debug\netcoreapp2.2\Inlämning 2 - Webshop.runtimeconfig.json
@@ -92,3 +91,18 @@ H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\n
 H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\Account\Login.g.cshtml.cs
 H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\Account\Register.g.cshtml.cs
 H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\Admin\AllOrders.g.cshtml.cs
+C:\Users\Robert\Documents\Nackademin\ASP.NET MVC 1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\Account\Login.g.cshtml.cs
+C:\Users\Robert\Documents\Nackademin\ASP.NET MVC 1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\Account\Register.g.cshtml.cs
+C:\Users\Robert\Documents\Nackademin\ASP.NET MVC 1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\Admin\AddIngredient.g.cshtml.cs
+C:\Users\Robert\Documents\Nackademin\ASP.NET MVC 1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\Admin\AddMeal.g.cshtml.cs
+C:\Users\Robert\Documents\Nackademin\ASP.NET MVC 1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\Admin\AllOrders.g.cshtml.cs
+C:\Users\Robert\Documents\Nackademin\ASP.NET MVC 1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\Admin\AlterMenu.g.cshtml.cs
+C:\Users\Robert\Documents\Nackademin\ASP.NET MVC 1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_AddIngredientPartial.g.cshtml.cs
+C:\Users\Robert\Documents\Nackademin\ASP.NET MVC 1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_AddMealPartial.g.cshtml.cs
+C:\Users\Robert\Documents\Nackademin\ASP.NET MVC 1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_ChangeRolePartial.g.cshtml.cs
+C:\Users\Robert\Documents\Nackademin\ASP.NET MVC 1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_IngredientListPartial.g.cshtml.cs
+C:\Users\Robert\Documents\Nackademin\ASP.NET MVC 1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_RemoveMealPartial.g.cshtml.cs
+C:\Users\Robert\Documents\Nackademin\ASP.NET MVC 1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_ShowMenuPartial.g.cshtml.cs
+C:\Users\Robert\Documents\Nackademin\ASP.NET MVC 1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_ShowOrdersPartial.g.cshtml.cs
+C:\Users\Robert\Documents\Nackademin\ASP.NET MVC 1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_UpdateMealPartial.g.cshtml.cs
+C:\Users\Robert\Documents\Nackademin\ASP.NET MVC 1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_UserDataPartial.g.cshtml.cs
