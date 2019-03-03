@@ -11,6 +11,7 @@ namespace Inlämning_2___Webshop.ViewModels
     {
         public ApplicationUser UserData { get; set; }
         public IList<string> UserRole { get; set; }
+        public string UserRoleName { get; set; }
         //public IdentityRole UserRole { get; set; }
         public List<IdentityRole> Roles { get; set; }
     }

@@ -8,5 +8,6 @@ namespace Inlämning_2___Webshop.IdentityData
 {
     public class ApplicationUser : IdentityUser
     {
+        public int? Points { get; set; }
     }
 }

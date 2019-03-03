@@ -1,4 +1,6 @@
-﻿@using Microsoft.AspNetCore.Identity;
+﻿@model ApplicationUser
+
+@using Microsoft.AspNetCore.Identity;
 @using Inlämning_2___Webshop.IdentityData;
 
 @inject SignInManager<ApplicationUser> signInManager
@@ -8,3 +10,24 @@
     ViewData["Title"] = "View Profile";
 }
 
+<div class="profile-container">
+    <img class="profile-photo clip-circle" src="~/img/profilepic1.png"/>
+    <h2>@Model.UserName</h2>
+    <p>@Model.Email</p>
+</div>
+
+
+@*<form method="post" asp-action="UpdateUserData">
+    <input asp-for="@Model.Id" type="hidden" value="@Model.Id" />
+
+    <label asp-for="@Model.UserName">Username</label>
+    <input asp-for="@Model.UserName" value="@Model.UserName " />
+
+    <label asp-for="@Model.Email">Email</label>
+    <input asp-for="@Model.Email" value="@Model.Email" />
+
+    <label asp-for="@Model.PhoneNumber">Phone number</label>
+    <input asp-for="@Model.PhoneNumber" value="@Model.PhoneNumber" />
+
+    <input type="submit" value="Submit" />
+</form>*@

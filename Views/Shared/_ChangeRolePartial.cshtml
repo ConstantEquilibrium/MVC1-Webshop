@@ -7,17 +7,18 @@
 @model Inlämning_2___Webshop.ViewModels.UserRoleViewModel
 
 <link href="~/css/StyleSheet.css" type="text/css" rel="stylesheet" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/jquery.ajax.unobtrusive/3.2.4/jquery.unobtrusive-ajax.min.js"></script>
+<div class="userlist-container flex flex-dir-row flex-just-cont-c">
+    <div>
+        <table class="userlist">
+            @foreach (var user in Model.Users)
+            {
+                <tr>
+                    <td>@user.UserName</td>
+                    <td><a class="btn btn-primary" asp-action="GetUserData" asp-route-id="@user.Id" data-ajax="true" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-update="#ProfilePanel">Get user information</a></td>
+                </tr>
+            }
+        </table>
+    </div>
 
-<table>
-    @foreach (var user in Model.Users)
-    {
-    <tr>
-        <td>@user.UserName</td>
-        <td><a asp-action="GetUserData" asp-route-id="@user.Id" data-ajax="true" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-update="#ProfilePanel">Get user information</a></td>
-    </tr>
-    }
-</table>
-
-<div id="ProfilePanel"></div>
+    <div id="ProfilePanel"></div>
+</div>

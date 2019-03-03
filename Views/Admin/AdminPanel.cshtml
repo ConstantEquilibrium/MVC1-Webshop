@@ -8,16 +8,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/jquery.ajax.unobtrusive/3.2.4/jquery.unobtrusive-ajax.min.js"></script>
 
-<h1>Admin</h1>
+<div class="admin-container flex flex-dir-col flex-just-cont-space-a">
+    <div class="admin-nav">
+        <a class="btn btn-primary" asp-action="ChangeRole" data-ajax="true" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-update="#Panel">Change role</a>
+        <a class="btn btn-primary" asp-controller="Admin" asp-action="AlterMenu">Modify Menu</a>
+        <a class="btn btn-primary" asp-controller="Admin" asp-action="Orders">Show orders</a>
+    </div>
 
-@*<a class="btn btn-primary" asp-controller="Admin" asp-action="AddMeal" data-ajax="true" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-update="#Panel">Add meal</a>*@
-
-<a class="btn btn-primary" asp-action="ChangeRole" data-ajax="true" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-update="#Panel">Change role</a>
-
-@*<a class="btn btn-primary" asp-controller="Admin" asp-action="ShowMenu" data-ajax="true" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-update="#Panel">Modify Menu</a>*@
-
-<a class="btn btn-primary" asp-controller="Admin" asp-action="AlterMenu">Modify Menu</a>
-
-<a class="btn btn-primary" asp-controller="Admin" asp-action="Orders">Show orders</a>
-
-<div id="Panel"></div>
+    <div id="Panel"></div>
+</div>

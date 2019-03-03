@@ -13,7 +13,6 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@User.Identity.Name <span class="caret"></span></a>
             <ul class="dropdown-menu">
                 <a asp-controller="User" asp-action="Orders"><li class="nav-link">Orders</li></a>
-                <a asp-controller="User" asp-action="Settings"><li class="nav-link">Settings</li></a>
                 <a asp-controller="User" asp-action="Profile"><li class="nav-link">Profile</li></a>
                 @if (User.IsInRole("admin"))
                 {
@@ -21,7 +20,7 @@
                     <a asp-controller="Admin" asp-action="AdminPanel"><li class="nav-link">Admin</li></a> 
                 }
                 <li role="separator" class="divider"></li>
-                <a asp-controller="Auth" asp-action="Logout"><li class="nav-link">Logout</li></a>
+                <a asp-controller="Account" asp-action="Logout"><li class="nav-link">Logout</li></a>
             </ul>
         </li>
         
@@ -31,8 +30,8 @@
 else
 {
     <ul class="navbar-nav flex-grow-1">
-        <li class="nav-link"><a class="btn btn-light" asp-controller="Auth" asp-action="Login">Logga in</a> </li>
-        <li class="nav-link"><a class="btn btn-primary" asp-controller="Auth" asp-action="Register">Skapa användare</a> </li>
+        <li class="nav-link"><a class="btn btn-light" asp-controller="Account" asp-action="Login">Logga in</a> </li>
+        <li class="nav-link"><a class="btn btn-primary" asp-controller="Account" asp-action="Register">Skapa användare</a> </li>
     </ul>
 
 }

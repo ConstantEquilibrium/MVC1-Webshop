@@ -32,8 +32,20 @@ namespace Inlämning_2___Webshop.Controllers
 
         public IActionResult Menu()
         {
-            CheckCart();
-            var model = _tomasosContext.Matratt.ToList();
+            //CheckCart();
+            //var model = _tomasosContext.Matratt.ToList();
+
+            List<MealData> model = new List<MealData>();
+
+            foreach (var meal in _tomasosContext.Matratt)
+            {
+                model.Add(new MealData
+                {
+                    Matratt = meal,
+                    Category = _tomasosContext.MatrattTyp.SingleOrDefault(x => x.MatrattTypId == meal.MatrattTyp),
+                    Ingredients = (from p in _tomasosContext.Produkt join mp in _tomasosContext.MatrattProdukt on p.ProduktId equals mp.ProduktId where mp.MatrattId == meal.MatrattId select p).ToList()
+                });
+            }
 
             return View(model);
         }
@@ -126,6 +138,20 @@ namespace Inlämning_2___Webshop.Controllers
                     {
                         order.Totalbelopp = Convert.ToInt32(order.Totalbelopp * .8);
                     }
+
+                    foreach (var item in cart)
+                    {
+                        currentUser.Points += 10;
+                    }
+
+                    if (currentUser.Points >= 100)
+                    {
+                        var cheapest = cart.OrderBy(x => x.Pris).First();
+                        cart.First(x => x.MatrattId == cheapest.MatrattId).Pris = 0;
+                        currentUser.Points -= 100;
+                    }
+
+                    _applicationContext.SaveChanges();
                 }
 
                 _tomasosContext.Bestallning.Add(order);

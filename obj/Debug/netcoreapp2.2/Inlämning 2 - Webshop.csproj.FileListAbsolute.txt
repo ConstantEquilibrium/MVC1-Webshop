@@ -65,7 +65,6 @@ H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\n
 H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
 H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\User\Orders.g.cshtml.cs
 H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\User\Profile.g.cshtml.cs
-H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\User\Settings.g.cshtml.cs
 H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\_ViewImports.g.cshtml.cs
 H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\_ViewStart.g.cshtml.cs
 H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Inlämning 2 - Webshop.RazorTargetAssemblyInfo.cache
@@ -91,3 +90,5 @@ H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\n
 H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_IngredientListPartial.g.cshtml.cs
 H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\Admin\Orders.g.cshtml.cs
 H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_ShowOrdersPartial.g.cshtml.cs
+H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\Account\Login.g.cshtml.cs
+H:\Robert\Nackademin\ASPNET MVC1\Inlämningar\Inlämning 2 - Webshop\obj\Debug\netcoreapp2.2\Razor\Views\Account\Register.g.cshtml.cs

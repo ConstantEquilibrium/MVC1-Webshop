@@ -1,10 +1,18 @@
 ﻿@model Inlämning_2___Webshop.ViewModels.AddIngredientViewModel
 
-<partial name="_IngredientListPartial" />
-
-<form method="post" asp-controller="Admin" asp-action="AddIngredient">
-    <label asp-for="NewIngredient.ProduktNamn">Namn</label>
-    <input asp-for="NewIngredient.ProduktNamn" placeholder="Namn.." />
-
-    <input type="submit" value="Save" />
-</form>
+    <div class="flex flex-dir-row flex-just-cont-c">
+        <div class="flex-left">
+            <partial name="_IngredientListPartial" />
+        </div>
+        <div class="flex-right">
+            <form class="addingredient-form" method="post" asp-controller="Admin" asp-action="AddIngredient">
+                <div class="formgroup">
+                    <label asp-for="NewIngredient.ProduktNamn">Namn</label>
+                    <input asp-for="NewIngredient.ProduktNamn" placeholder="Namn.." />
+                </div>
+                <div class="formgroup">
+                    <input class="addingredient-form-confirm" type="submit" value="Save" />
+                </div>
+            </form>
+        </div>
+    </div>

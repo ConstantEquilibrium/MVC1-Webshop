@@ -1,4 +1,4 @@
-﻿@model List<Inlämning_2___Webshop.Models.Matratt>
+﻿@model List<Inlämning_2___Webshop.ViewModels.MealData>
 @{
     ViewData["Title"] = "Menu";
 }
@@ -9,42 +9,28 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/jquery.ajax.unobtrusive/3.2.4/jquery.unobtrusive-ajax.min.js"></script>
 
-<div id="productlist">
-    <table>
+<div class="flex-container">
+    <div id="productlist">
         @foreach (var recipe in Model)
         {
-            <tr>
-                <td>@recipe.MatrattNamn</td>
-                <td>@recipe.Pris SEK</td>
-                <td><a asp-controller="Store" asp-action="AddProductToCart" asp-route-id="@recipe.MatrattId" data-ajax="true" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-update="#cart">Add to cart</a></td>
-            </tr>
+            <div class="recipe-container">
+                <div class="recipe-flex-container">
+                    <div class="flex-left">
+                        <h4>@recipe.Matratt.MatrattNamn</h4>
+                    </div>
+                    <div class="flex-right">
+                        <p class="menu-price">@recipe.Matratt.Pris SEK</p>
+                        <a class="btn btn-primary add-to-cart" asp-controller="Store" asp-action="AddProductToCart" asp-route-id="@recipe.Matratt.MatrattId" data-ajax="true" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-update="#cart">Add to cart</a>
+                    </div>
+                </div>
+                <div class="recipe-container-ingredients">
+                    @foreach (var ingredient in recipe.Ingredients)
+                    {
+                        <p>@ingredient.ProduktNamn</p>
+                    }
+                </div>
+            </div>
         }
-    </table>
+    </div>
+    <div id="cart"></div>
 </div>
-
-<div id="cart">
-
-
-
-</div>
-
-
-@*@foreach (var item in Model)
-{
-    <div class="MealContainer" style="margin-bottom:2em">
-        <table>
-            <tr>
-                <td>@item.Matratt.MatrattNamn</td>
-                <td>@item.Matratt.Beskrivning</td>
-                <td>@item.Category.Beskrivning</td>
-                <td>@item.Matratt.Pris</td>
-                @foreach (var ingredient in item.Ingredients)
-                {
-                <tr>
-                    <td>@ingredient.ProduktNamn</td>
-                </tr>
-            }
-                </tr>
-            </table>
-        </div>
-    }*@

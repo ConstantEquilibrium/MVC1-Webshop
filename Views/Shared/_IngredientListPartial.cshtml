@@ -1,11 +1,19 @@
 ﻿<div id="IngredientList">
-    <ul>
+    <table class="ingredient-table">
+        <tr>
+            <th>Ingredient</th>
+            <th></th>
+        </tr>
         @foreach (var ingredient in Model.ExistingIngredients)
         {
-            <li>
-                @ingredient.ProduktNamn 
-                <a class="btn btn-sm btn-danger" asp-action="RemoveIngredient" asp-route-id="@ingredient.ProduktId" data-ajax="true" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-update="#IngredientList">Remove</a>
-            </li>
+            <tr>
+                <td>
+                    @ingredient.ProduktNamn
+                </td>
+                <td>
+                    <a class="btn btn-sm btn-danger" asp-action="RemoveIngredient" asp-route-id="@ingredient.ProduktId" data-ajax="true" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-update="#IngredientList">Remove</a>
+                </td>
+            </tr>
         }
-    </ul>
+    </table>
 </div>

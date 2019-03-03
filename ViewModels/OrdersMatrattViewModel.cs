@@ -11,23 +11,25 @@ namespace Inlämning_2___Webshop.ViewModels
     {
         public ApplicationUser UserData { get; set; }
         public List<Bestallning> OrderData { get; set; }
-        //public List<OrderMatrattModel> OrderData { get; set; }
+        public List<OrderMatrattModel> OrderMealData { get; set; }
     }
 
     public class OrderMatrattModel
     {
         public Bestallning Order { get; set; }
-        public List<OrderMatrattNamnModel> MealOrders { get; set; }
+        public List<Matratt> Meals { get; set; }
+        public List<OrderMatratt> MealList { get; set; }
 
         public OrderMatrattModel()
         {
-            MealOrders = new List<OrderMatrattNamnModel>();
+            MealList = new List<OrderMatratt>();    
+            Meals = new List<Matratt>();
         }
     }
 
-    public class OrderMatrattNamnModel
+    public class OrderMatratt
     {
-        public string MealName { get; set; }
-        public BestallningMatratt MealOrder { get; set; }
+        public Matratt Meal { get; set; }
+        public int Amount { get; set; }
     }
 }

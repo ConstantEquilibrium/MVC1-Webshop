@@ -5,8 +5,11 @@
 
 @* ALTER MENU MENU  *@
 
-<a class="btn btn-primary" asp-controller="Admin" asp-action="GetMenu" data-ajax="true" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-update="#InnerPanel">Modify menu</a>
-<a class="btn btn-primary" asp-controller="Admin" asp-action="AddMeal" data-ajax="true" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-update="#InnerPanel">Add new meal</a>
-<a class="btn btn-primary" asp-controller="Admin" asp-action="GetIngredients" data-ajax="true" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-update="#InnerPanel">Modify ingredients</a>
+<div class="admin-nav">
+    <a class="btn btn-primary" asp-controller="Admin" asp-action="GetMenu" data-ajax="true" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-update="#InnerPanel">Modify menu</a>
+    <a class="btn btn-primary" asp-controller="Admin" asp-action="AddMeal" data-ajax="true" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-update="#InnerPanel">Add new meal</a>
+    <a class="btn btn-primary" asp-controller="Admin" asp-action="GetIngredients" data-ajax="true" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-update="#InnerPanel">Modify ingredients</a>
+
+</div>
 
 <div id="InnerPanel"></div>

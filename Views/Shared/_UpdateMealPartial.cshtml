@@ -1,31 +1,41 @@
 ﻿@model Inlämning_2___Webshop.ViewModels.AddMealViewModel
 
-<h1>Add Meal</h1>
+<form class="recipedata-form"  method="post" asp-controller="Admin" asp-action="UpdateMeal">
+        <div class="formgroup input-wide">
+            <label asp-for="Recipe.MatrattNamn">Namn</label>
+            <input asp-for="Recipe.MatrattNamn" value="@Model.Recipe.MatrattNamn" />
+        </div>
 
-<form method="post" asp-controller="Admin" asp-action="UpdateMeal">
-    <label asp-for="Recipe.MatrattNamn">Namn</label>
-    <input asp-for="Recipe.MatrattNamn" value="@Model.Recipe.MatrattNamn" />
-    <br />
-    <label asp-for="Recipe.Beskrivning">Beskrivning</label>
-    <input asp-for="Recipe.Beskrivning" value="@Model.Recipe.Beskrivning" />
-    <br />
+        <div class="formgroup input-wide">
+            <label asp-for="Recipe.Beskrivning">Beskrivning</label>
+            <input asp-for="Recipe.Beskrivning" value="@Model.Recipe.Beskrivning" />
+        </div>
+    
+    <div class="formgroup">
+        <label asp-for="@Model.Recipe.MatrattTyp">Category</label>
+        <select asp-for="@Model.Recipe.MatrattTyp">
+            @foreach (var category in Model.Categories)
+            {
+                <option value="@category.MatrattTypId">@category.Beskrivning</option>
+            }
+        </select>
+    </div>
 
-    <select asp-for="@Model.Recipe.MatrattTyp">
-        @foreach (var category in Model.Categories)
-        {
-            <option value="@category.MatrattTypId">@category.Beskrivning</option>
-        }
-    </select>
+    <div class="formgroup">
+        <label asp-for="@Model.SelectedIngredientIds">Ingredients:</label>
+        <select asp-for="@Model.SelectedIngredientIds">
+            @foreach (var ingredient in Model.Ingredients)
+            {
+                <option value="@ingredient.ProduktId">@ingredient.ProduktNamn</option>
+            }
+        </select>
+    </div>
 
+    <div class="formgroup">
+        <label asp-for="Recipe.Pris">Pris</label>
+        <input type="number" asp-for="Recipe.Pris" />
+        <input type="submit" class="btn btn-confirm" value="Submit" />
+    </div>
 
-    <select asp-for="@Model.SelectedIngredientIds">
-        @foreach (var ingredient in Model.Ingredients)
-        {
-            <option value="@ingredient.ProduktId">@ingredient.ProduktNamn</option>
-        }
-    </select>
-
-    <br />
-    <input asp-for="Recipe.MatrattId" type="hidden" value="@Model.Recipe.MatrattId" />
-    <input type="submit" class="btn btn-confirm" value="Submit" />
+        <input asp-for="Recipe.MatrattId" type="hidden" value="@Model.Recipe.MatrattId" />
 </form>

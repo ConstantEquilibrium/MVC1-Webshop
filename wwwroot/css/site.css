@@ -85,3 +85,347 @@ body {
     .dropdown-menu > .divider, .dropdown-menu > a > li:last-child {
         border-bottom: none;
     }
+
+.profile-container {
+    margin:0 auto;
+    text-align:center;
+}
+
+    .profile-container .clip-circle {
+        border-radius: 50%;
+    }
+
+    .profile-container .profile-photo {
+        width:10em;
+    }
+
+    .flex-container {
+        display:flex;
+        flex-direction:row;
+        justify-content:space-around;
+    }
+
+    #productlist {
+        margin:0 auto;
+        width:50%;
+    }
+
+        .recipe-container {
+            border:1px solid lightgrey;
+            border-radius:0.5rem;
+            margin-bottom:1rem;
+            padding:1rem;
+        }
+
+        .recipe-flex-container {
+            display:flex;
+            flex-direction:row;
+            justify-content:space-between;
+            border-bottom:1px solid lightgrey;
+            padding-bottom:1rem;
+        }
+
+            .recipe-container-ingredients {
+                padding-top:1rem;
+            }
+
+                .recipe-container-ingredients p {
+                    margin-bottom:0;
+                }    
+
+            .flex-right p, .flex-left p {
+                margin-bottom: 0;
+                vertical-align: middle;
+            }
+
+            .recipe-flex-container .flex-right p, .recipe-flex-container .flex-right a {
+                display: inline-block;
+            }
+
+            .recipe-flex-container .flex-right p {
+                font-size: 1.2rem;
+            }
+
+            .recipe-flex-container .add-to-cart {
+                margin-left: 0.5rem;
+            }
+
+/************************** ORDERS ***************************/
+
+.flex {
+    display:flex;
+}
+
+.flex-dir-col {
+    flex-direction:column;
+}
+
+.flex-dir-row {
+    flex-direction:row;
+}
+
+.flex-just-cont-space-b {
+    justify-content: space-between;
+}
+
+.flex-just-cont-space-a {
+    justify-content: space-around;
+}
+
+.flex-just-cont-c {
+    justify-content:center;
+}
+
+.order-table {
+    border: 1px solid lightgrey;
+    border-radius: 0.5em;
+    width: 100%;
+    max-width: 800px;
+}
+
+    .order-table tr {
+        margin-bottom:1rem;
+        border-bottom:1px solid lightgrey;
+        padding-bottom:1rem;
+    }
+
+        .table-row-space {
+            padding:0 0 5rem 0!important;
+            margin:0;
+            width:0;
+            height:0;
+        }
+
+        .order-table tr td table {
+            width:100%;
+        }
+
+        .order-table tr:first-child, .order-table tr:last-child, .order-table tr td table tr, .order-table tr td table tr td {
+            border: none;
+            padding: 0;
+        }
+
+            .order-table tr td table tr .item-amount {
+                text-align:right;
+                opacity:0.5;
+            }
+
+    .order-table td, .order-table th {
+        padding:1rem;
+        vertical-align: top;
+    }
+
+    .order-table .order-price {
+        text-align:right;
+    }
+
+    .order-table .remove-order {
+        text-align:right;
+    }
+
+    .order-table .order-table-meals:last-child {
+        border-bottom:1px solid lightgrey;
+    }
+
+    .flex-container-col {
+        display: flex;
+        flex-direction: column;
+    }
+
+/************************** ORDERS ***************************/
+
+.userlist-container {
+    margin-top:3rem;
+}
+
+.userlist {
+    margin: 0 auto;
+    border: 1px solid lightgrey;
+    height:100%;
+}
+
+.userdata-form {
+    padding:1rem 3rem;
+    border: 1px solid lightgrey;
+    border-left:none;
+    height:100%;
+}
+
+    .userlist tr {
+        border-bottom:1px solid lightgrey;
+    }
+
+    .userlist td {
+        padding:1rem;
+    }
+
+.userdata-form > .formgroup {
+    display:block;
+    width:100%;
+    margin-bottom:0.3rem;
+}
+
+.userdata-form > .formgroup > label {
+    display:block;
+    margin:0;
+}
+
+    .userdata-form > .formgroup > input, .userdata-form > .formgroup > select {
+        border: 1px solid lightgrey;
+        border-radius: 0.2rem;
+        padding: 0.3rem;
+    }
+
+/******************** ADMIN *******************/
+
+.admin-container {
+    height:80vh;
+}
+
+.admin-nav {
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.block {
+    display: block;
+}
+
+.recipedata-form {
+    margin:0 auto;
+    padding: 1rem 3rem;
+    border: 1px solid lightgrey;
+    height: 100%;
+    width:50%;
+    max-width:700px;
+}
+
+    .recipedata-form .formgroup {
+        margin-bottom:.5rem;
+    }
+
+    .recipedata-form > .formgroup > input, .recipedata-form > .formgroup > select {
+        border: 1px solid lightgrey;
+        border-radius: 0.2rem;
+        padding: 0.3rem;
+        vertical-align: middle;
+    }
+
+        .input-wide > input{ 
+            width:100%;
+        }
+
+        .recipedata-form .formgroup > label {
+            display: block;
+            margin: 0;
+        }
+
+    .recipedata-form .formgroup-inline {
+        display:inline-block;
+    }
+
+.adminmenu-table {
+    border: 1px solid lightgrey;
+    border-radius: 0.5em;
+    width: 100%;
+}
+
+    .adminmenu-table tr {
+        margin-bottom: 1rem;
+        border-bottom: 1px solid lightgrey;
+        padding-bottom: 1rem;
+    }
+
+        .adminmenu-table tr td table {
+            width: 100%;
+        }
+
+            .adminmenu-table tr td table tr .item-amount {
+                text-align: right;
+                opacity: 0.5;
+            }
+
+    .adminmenu-table td, .adminmenu-table th {
+        padding: 1rem;
+        vertical-align: middle;
+    }
+
+    .adminmenu-table .remove-recipe, .adminmenu-table .update-recipe {
+        text-align: right;
+    }
+
+/******************* ADD MEAL ******************/
+
+.addmeal-form {
+    margin:0 auto;
+    width:50%;
+    max-width:400px;
+    padding: 1rem 3rem;
+    border: 1px solid lightgrey;
+    height: 100%;
+}
+
+.userlist tr {
+    border-bottom: 1px solid lightgrey;
+}
+
+.userlist td {
+    padding: 1rem;
+}
+
+.addmeal-form > .formgroup {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.3rem;
+}
+
+    .addmeal-form > .formgroup > label {
+        display: block;
+        margin: 0;
+    }
+
+    .addmeal-form > .formgroup > input, .addmeal-form > .formgroup > select {
+        border: 1px solid lightgrey;
+        border-radius: 0.2rem;
+        padding: 0.3rem;
+    }
+
+    .addmeal-form-confirm {
+        vertical-align:bottom;
+    }
+
+/******************* MODIFY INGREDIENTS ******************/
+
+.ingredient-table {
+    border:1px solid lightgrey;
+}
+
+.ingredient-table tr {
+    margin-bottom: 1rem;
+    border-bottom: 1px solid lightgrey;
+    padding-bottom: 1rem;
+}
+
+.ingredient-table td, .ingredient-table th {
+    padding: 0.6rem;
+    vertical-align: top;
+}
+
+.addingredient-form {
+    margin: 0 auto;
+    max-width: 400px;
+    padding: 1rem 3rem;
+    border: 1px solid lightgrey;
+    border-left:none;
+    height: 100%;
+}
+
+    .addingredient-form .formgroup {
+        display: block;
+        width: 100%;
+        text-align: right;
+        margin-bottom: 0.3rem;
+    }
+
+    .addingredient-form-confirm {
+    }

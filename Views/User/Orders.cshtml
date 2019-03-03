@@ -6,22 +6,81 @@
 
 <h1>Orders</h1>
 
-<table>
-    @foreach (var order in Model.OrderData)
-    {
+<div class="flex-container">
+    <table class="order-table">
         <tr>
-            <td>Order date: @order.BestallningDatum</td>
-            <td>@order.Totalbelopp</td>
-            <td>Delivery status:
-            @if (order.Levererad.Equals(false))
-            {
-                <span>On the way</span>
-            } else
-            {
-                <span>Delivery completed</span>
-            }
-            </td>
-            <td><a asp-action="RemoveOrder" asp-controller="User" asp-route-orderid="@order.BestallningId" class="btn btn-danger btn-sm">Remove Order</a></td>
+            <th>Order Date:</th>
+            <th class="order-price">Total Price</th>
+            <th>Delivery Status</th>
+            <th>Contents</th>
+            <th></th>
+            <th></th>
         </tr>
+        @foreach (var order in Model.OrderMealData)
+        {
+            <tr>
+                <td>@order.Order.BestallningDatum.ToShortDateString()</td>
+                <td class="order-price">@order.Order.Totalbelopp SEK</td>
+                <td>
+                    @if (order.Order.Levererad.Equals(false))
+                    {
+                        <span>On the way</span>
+                    }
+                    else
+                    {
+                        <span>Delivery completed</span>
+                    }
+                </td>
+                <td>
+                    <table>
+                        @foreach (var item in order.MealList)
+                        {
+                            <tr>
+                                <td>@item.Meal.MatrattNamn</td>
+                                <td class="item-amount"><span>x</span>@item.Amount</td>
+                            </tr>
+                        }
+                    </table>
+                </td>
+                <td class="remove-order"><a asp-action="RemoveOrder" asp-controller="User" asp-route-orderid="@order.Order.BestallningId" class="btn btn-danger btn-sm">Remove Order</a></td>
+                <td class="table-row-space"></td>
+            </tr>
+        }
+    </table>
+</div>
+
+@*<div class="order-container flex flex-dir-col">
+    @foreach (var item in Model.OrderMealData)
+    {
+        <div class="order">
+            <div class="flex flex-dir-col flex-just-cont-space-b">
+                <div class="row flex flex-dir-row flex-just-cont-space-b">
+                    <p>Order date</p>
+                    <p>Total Price</p>
+                    <p>Order Status</p>
+                </div>
+                <div class="row flex flex-dir-row flex-just-cont-space-b">
+                    <p>@item.Order.BestallningDatum</p>
+                    <p class="order-price">@item.Order.Totalbelopp SEK</p>
+                    <p>
+                        @if (item.Order.Levererad.Equals(false))
+                        {
+                            <span>On the way</span>
+                        }
+                        else
+                        {
+                            <span>Delivery completed</span>
+                        }
+                    </p>
+                </div>
+                <a asp-action="RemoveOrder" asp-controller="User" asp-route-orderid="@item.Order.BestallningId" class="btn btn-danger btn-sm">Remove Order</a>
+            </div>
+            <div class="flex flex-dir-col flex-just-cont-space-a">
+                @foreach (var meal in item.Meals)
+                {
+                    <p>@meal.MatrattNamn</p>
+                }
+            </div>
+        </div>
     }
-</table>
+</div>*@

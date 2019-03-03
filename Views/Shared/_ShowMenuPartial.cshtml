@@ -2,30 +2,23 @@
 
 <h1>Menu</h1>
 
-<table>
+<table class="adminmenu-table">
     @foreach (var item in Model)
     {
         <tr>
             <td>@item.Matratt.MatrattNamn</td>
             <td>@item.Matratt.Beskrivning</td>
             <td>@item.Category.Beskrivning</td>
-            <td style="text-align:right">@item.Matratt.Pris SEK</td>
+            <td class="item-amount">@item.Matratt.Pris SEK</td>
 
-            <td>
+            <td class="update-recipe">
                 <a asp-action="UpdateMeal" class="btn btn-warning" asp-route-id="@item.Matratt.MatrattId" data-ajax="true" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-update="#InnerPanel">Update meal</a>
             </td>
 
-            <td>
+            <td class="remove-recipe">
                 <a asp-action="RemoveMeal" class="btn btn-danger" asp-route-id="@item.Matratt.MatrattId">Remove meal</a>
             </td>
         </tr>
-
-        @*@foreach (var ingredient in item.Ingredients)
-        {
-            <tr>
-                <td>@ingredient.ProduktNamn</td>
-            </tr>
-         }*@
     }
 </table>
 

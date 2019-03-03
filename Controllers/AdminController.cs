@@ -6,11 +6,13 @@ using Inlämning_2___Webshop.IdentityData;
 using Inlämning_2___Webshop.Models;
 using Inlämning_2___Webshop.ViewModels;
 using Inlämning_2___Webshop.ViewModels.Admin;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Inlämning_2___Webshop.Controllers
 {
+    [Authorize(Roles = "admin")]
     public class AdminController : Controller
     {
         private ApplicationDBContext _dbContext;
@@ -260,10 +262,10 @@ namespace Inlämning_2___Webshop.Controllers
 
             if (ModelState.IsValid)
             {
-                if (form.UserRole.First() != currentRole)
+                if (form.UserRoleName != currentRole)
                 {
                     await _userManager.RemoveFromRoleAsync(user, currentRole);
-                    await _userManager.AddToRoleAsync(user, form.UserRole.First());
+                    await _userManager.AddToRoleAsync(user, form.UserRoleName);
                 }
 
                 if (form.UserData.UserName != user.UserName)
