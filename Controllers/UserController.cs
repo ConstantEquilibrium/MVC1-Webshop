@@ -40,7 +40,7 @@ namespace Inlämning_2___Webshop.Controllers
         }
 
         [Route("Orders/")]
-        [Authorize(Roles = "admin")]
+        [Authorize]
         public async Task<IActionResult> Orders()
         {
             OrdersMatrattViewModel model = new OrdersMatrattViewModel();

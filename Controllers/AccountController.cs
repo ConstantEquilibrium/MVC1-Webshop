@@ -29,6 +29,7 @@ namespace Inlämning_2___Webshop.Controllers
             return View();
         }
 
+        [AllowAnonymous]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(RegisterUser user)
@@ -50,7 +51,7 @@ namespace Inlämning_2___Webshop.Controllers
                 await _signInManager.SignInAsync(userIdentity, isPersistent: false);
             }
 
-            return View();
+            return RedirectToAction("Index", "Home");
         }
 
         [AllowAnonymous]
@@ -83,10 +84,12 @@ namespace Inlämning_2___Webshop.Controllers
 
         private async Task createRole()
         {
-            bool x = await _roleManager.RoleExistsAsync("premium");
+            string roleName = "standard";
+
+            bool x = await _roleManager.RoleExistsAsync(roleName);
             if (x == false)
             {
-                var role = new IdentityRole { Name = "premium" };
+                var role = new IdentityRole { Name = roleName };
                 await _roleManager.CreateAsync(role);
             }
         }

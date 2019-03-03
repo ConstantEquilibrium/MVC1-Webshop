@@ -46,7 +46,7 @@ namespace Inlämning_2___Webshop
                 .AddEntityFrameworkStores<TomasosContext>()
                 .AddDefaultTokenProviders();
 
-            services.Configure<RouteOptions>(options => options.AppendTrailingSlash = true);
+            //services.Configure<RouteOptions>(options => options.AppendTrailingSlash = true);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -74,7 +74,7 @@ namespace Inlämning_2___Webshop
                 routes.MapRoute(
                     name: "AuthRoute",
                     template: "{action}",
-                    defaults: new { controller = "Auth" });
+                    defaults: new { controller = "Account" });
 
                 routes.MapRoute(
                     name: "UserRoute",
@@ -82,9 +82,19 @@ namespace Inlämning_2___Webshop
                     defaults: new { controller = "User" });
 
                 routes.MapRoute(
+                    name: "HomeRoute",
+                    template: "{action}",
+                    defaults: new { controller = "Home" });
+
+                routes.MapRoute(
                     name: "AdminPanel",
-                    template: "Admin",
-                    defaults: new { controller = "Admin", action = "AdminPanel" });
+                    template: "{action}",
+                    defaults: new { controller = "Admin"});
+
+                routes.MapRoute(
+                    name: "StoreRoute",
+                    template: "{action}",
+                    defaults: new { controller = "Store" });
 
                 //routes.MapRoute(
                 //name: "default",
@@ -92,7 +102,7 @@ namespace Inlämning_2___Webshop
 
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Store}/{action=Menu}/{id?}");
+                    template: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }

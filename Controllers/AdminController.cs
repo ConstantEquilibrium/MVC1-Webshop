@@ -312,7 +312,7 @@ namespace Inlämning_2___Webshop.Controllers
 
         /*************** ORDER FUNCTIONS ***************/
 
-        public IActionResult Orders()
+        public IActionResult AllOrders()
         {
             List<AdminOrderViewModel> model = new List<AdminOrderViewModel>();
             foreach (var user in _dbContext.Users)
@@ -345,7 +345,7 @@ namespace Inlämning_2___Webshop.Controllers
 
             return PartialView("_ShowOrdersPartial", model);
         }
-        public IActionResult RemoveOrder(int orderid)
+        public IActionResult DeleteOrder(int orderid)
         {
             var order = _tomasosContext.Bestallning.SingleOrDefault(x => x.BestallningId == orderid);
             var mealorder = _tomasosContext.BestallningMatratt.Where(x => x.BestallningId == orderid).ToList();

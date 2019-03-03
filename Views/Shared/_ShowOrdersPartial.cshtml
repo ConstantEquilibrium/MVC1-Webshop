@@ -6,7 +6,7 @@
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
 
-<table>
+@*<table>
     <tr>
         <th>User</th><th>Date</th><th>Cost</th><th>Delivery status</th><th></th><th></th>
     </tr>
@@ -29,32 +29,46 @@
                         <span>Delivery completed</span>
                     }
                 </td>
-                <td><a asp-action="RemoveOrder" asp-controller="Admin" asp-route-orderid="@order.BestallningId" class="btn btn-danger btn-sm" data-ajax="true" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-update="#orders">Remove Order</a></td>
+                <td><a asp-action="DeleteOrder" asp-controller="Admin" asp-route-orderid="@order.BestallningId" class="btn btn-danger btn-sm" data-ajax="true" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-update="#orders">Remove Order</a></td>
                 <td><a asp-action="ChangeOrderStatus" asp-controller="Admin" asp-route-orderid="@order.BestallningId" class="btn btn-warning btn-sm" data-ajax="true" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-update="#orders">Change order status</a></td>
             </tr>
         }
     }
-</table>
-
-@*<table>
-    @foreach (var order in Model)
-    {
-        <tr>
-            <td>Order date: @order.BestallningDatum</td>
-            <td>@order.Totalbelopp</td>
-            <td>
-                Delivery status:
-                @if (order.Levererad.Equals(false))
-                {
-                    <span>On the way</span>
-                }
-                else
-                {
-                    <span>Delivery completed</span>
-                }
-            </td>
-            <td><a asp-action="DeleteOrder" asp-controller="Admin" class="btn btn-danger btn-sm">Remove Order</a></td>
-            <td><a asp-action="ChangeOrderStatus" asp-controller="Admin" asp-route-orderid="@order.BestallningId" class="btn btn-warning btn-sm" data-ajax="true" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-update="#orders">Change order status</a></td>
-        </tr>
-    }
 </table>*@
+
+<div class="flex-container">
+    <table class="order-table">
+        <tr>
+            <th>User</th>
+            <th>Order Date:</th>
+            <th class="order-price">Total Price</th>
+            <th>Delivery Status</th>
+            <th></th>
+            <th></th>
+        </tr>
+        @foreach (var user in Model)
+        {
+            @foreach (var order in user.Orders)
+            {
+                <tr>
+                    <td>@user.User.UserName</td>
+                    <td>@order.BestallningDatum.ToShortDateString()</td>
+                    <td class="order-price">@order.Totalbelopp SEK</td>
+                    <td>
+                        @if (order.Levererad.Equals(false))
+                        {
+                            <span>On the way</span>
+                        }
+                        else
+                        {
+                            <span>Delivery completed</span>
+                        }
+                    </td>
+                    <td><a asp-action="DeleteOrder" asp-controller="Admin" asp-route-orderid="@order.BestallningId" class="btn btn-danger btn-sm" data-ajax="true" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-update="#orders">Remove Order</a></td>
+                    <td><a asp-action="ChangeOrderStatus" asp-controller="Admin" asp-route-orderid="@order.BestallningId" class="btn btn-warning btn-sm" data-ajax="true" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-update="#orders">Change order status</a></td>
+                    <td class="table-row-space"></td>
+                </tr>
+            }
+        }
+    </table>
+</div>

@@ -1,6 +1,7 @@
 ﻿using Inlämning_2___Webshop.IdentityData;
 using Inlämning_2___Webshop.Models;
 using Inlämning_2___Webshop.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -30,6 +31,7 @@ namespace Inlämning_2___Webshop.Controllers
             _applicationContext = applicationContext;
         }
 
+        [AllowAnonymous]
         public IActionResult Menu()
         {
             //CheckCart();
@@ -52,6 +54,7 @@ namespace Inlämning_2___Webshop.Controllers
 
         // TODO: Check if session for cart exists on entering menu. Considering making cart global to entire site
 
+        [Authorize]
         public IActionResult CheckCart()
         {
             List<Matratt> cart;
@@ -67,6 +70,7 @@ namespace Inlämning_2___Webshop.Controllers
             }
         }
 
+        [Authorize]
         public IActionResult AddProductToCart(int id)
         {
             List<Matratt> cart;
@@ -88,6 +92,7 @@ namespace Inlämning_2___Webshop.Controllers
             return PartialView("_Cart", cart);
         }
 
+        [Authorize]
         public IActionResult RemoveFromCart(int id)
         {
             var session = HttpContext.Session.GetString(sessionName);
@@ -101,6 +106,7 @@ namespace Inlämning_2___Webshop.Controllers
             return PartialView("_Cart", cart);
         }
 
+        [Authorize]
         public async Task<IActionResult> ConfirmOrder()
         {
             List<Matratt> cart;

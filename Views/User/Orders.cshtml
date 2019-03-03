@@ -48,39 +48,3 @@
         }
     </table>
 </div>
-
-@*<div class="order-container flex flex-dir-col">
-    @foreach (var item in Model.OrderMealData)
-    {
-        <div class="order">
-            <div class="flex flex-dir-col flex-just-cont-space-b">
-                <div class="row flex flex-dir-row flex-just-cont-space-b">
-                    <p>Order date</p>
-                    <p>Total Price</p>
-                    <p>Order Status</p>
-                </div>
-                <div class="row flex flex-dir-row flex-just-cont-space-b">
-                    <p>@item.Order.BestallningDatum</p>
-                    <p class="order-price">@item.Order.Totalbelopp SEK</p>
-                    <p>
-                        @if (item.Order.Levererad.Equals(false))
-                        {
-                            <span>On the way</span>
-                        }
-                        else
-                        {
-                            <span>Delivery completed</span>
-                        }
-                    </p>
-                </div>
-                <a asp-action="RemoveOrder" asp-controller="User" asp-route-orderid="@item.Order.BestallningId" class="btn btn-danger btn-sm">Remove Order</a>
-            </div>
-            <div class="flex flex-dir-col flex-just-cont-space-a">
-                @foreach (var meal in item.Meals)
-                {
-                    <p>@meal.MatrattNamn</p>
-                }
-            </div>
-        </div>
-    }
-</div>*@
